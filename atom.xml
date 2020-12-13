@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Jin Yuhan</title>
+  <icon>https://jin-yuhan.github.io/icon.png</icon>
+  <subtitle>Jin Yuhan&#39;s Blog</subtitle>
+  <link href="https://jin-yuhan.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://jin-yuhan.github.io/"/>
+  <updated>2020-12-13T08:19:04.781Z</updated>
+  <id>https://jin-yuhan.github.io/</id>
+  
+  <author>
+    <name>Jin Yuhan</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客介绍</title>
+    <link href="https://jin-yuhan.github.io/posts/36423e12/"/>
+    <id>https://jin-yuhan.github.io/posts/36423e12/</id>
+    <published>2020-12-13T05:26:50.000Z</published>
+    <updated>2020-12-13T08:19:04.781Z</updated>
+    
+    
+    <summary type="html">对博客的简要介绍</summary>
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>【Obsolete】 C#集合：ObjectPool&lt;T&gt;</title>
+    <link href="https://jin-yuhan.github.io/posts/defc3041/"/>
+    <id>https://jin-yuhan.github.io/posts/defc3041/</id>
+    <published>2020-07-31T15:43:06.000Z</published>
+    <updated>2020-11-07T15:07:44.870Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;code&gt;ObjectPool&amp;lt;T&amp;gt;&lt;/code&gt;表示一个对象池，任何实现了&lt;code&gt;IReusableObject&lt;/code&gt;接口并且定义了无参构造函数的对象 都可以被&lt;code&gt;ObjectPool&amp;lt;T&amp;gt;&lt;/code&gt;回收与分配。其内部维护一个可变长的&lt;code&gt;Stack&lt;/code&gt;（LIFO）。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/C/"/>
+    
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
+    
+    <category term="数据结构" scheme="https://jin-yuhan.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Obsolete】 C#集合：PriorityQueue&lt;T&gt;</title>
+    <link href="https://jin-yuhan.github.io/posts/7f9c5592/"/>
+    <id>https://jin-yuhan.github.io/posts/7f9c5592/</id>
+    <published>2020-07-31T15:42:46.000Z</published>
+    <updated>2020-11-07T15:07:50.514Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;code&gt;PriorityQueue&amp;lt;T&amp;gt;&lt;/code&gt;是一个优先级队列，与&lt;code&gt;Java&lt;/code&gt;中的实现方式类似，内部维护了一个小顶堆。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Enqueue()&lt;/code&gt;与&lt;code&gt;Dequeue()&lt;/code&gt;的时间复杂度大部分情况为&lt;code&gt;O(log n)&lt;/code&gt;，&lt;code&gt;Contains()&lt;/code&gt;的时间复杂度为&lt;code&gt;O(n)&lt;/code&gt;，&lt;code&gt;Peek()&lt;/code&gt;的时间复杂度为&lt;code&gt;O(1)&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;注：元素越小，其优先级越高。&lt;/em&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/C/"/>
+    
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
+    
+    <category term="数据结构" scheme="https://jin-yuhan.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Obsolete】 C#集合：NibbleArray</title>
+    <link href="https://jin-yuhan.github.io/posts/970c2a35/"/>
+    <id>https://jin-yuhan.github.io/posts/970c2a35/</id>
+    <published>2020-07-31T15:29:48.000Z</published>
+    <updated>2020-11-07T15:07:38.460Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;code&gt;NibbleArray&lt;/code&gt;是一个压缩数组，每一个元素的大小为4bit。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/C/"/>
+    
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
+    
+    <category term="数据结构" scheme="https://jin-yuhan.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>【Obsolete】 计数原理，排列组合，概率论初步</title>
+    <link href="https://jin-yuhan.github.io/posts/d80405e4/"/>
+    <id>https://jin-yuhan.github.io/posts/d80405e4/</id>
+    <published>2020-07-03T13:41:05.000Z</published>
+    <updated>2020-11-08T06:16:24.799Z</updated>
+    
+    
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;计数原理，排列组合，概率论初步；简单整理点概念和公式。&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="高考" scheme="https://jin-yuhan.github.io/categories/%E9%AB%98%E8%80%83/"/>
+    
+    <category term="数学" scheme="https://jin-yuhan.github.io/categories/%E9%AB%98%E8%80%83/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="计数原理" scheme="https://jin-yuhan.github.io/tags/%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86/"/>
+    
+    <category term="排列组合" scheme="https://jin-yuhan.github.io/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/"/>
+    
+    <category term="概率论" scheme="https://jin-yuhan.github.io/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>樱花动漫爬虫</title>
+    <link href="https://jin-yuhan.github.io/posts/b6dc2c/"/>
+    <id>https://jin-yuhan.github.io/posts/b6dc2c/</id>
+    <published>2020-04-19T14:58:39.000Z</published>
+    <updated>2020-12-13T08:23:17.901Z</updated>
+    
+    
+    <summary type="html">使用python实现在樱花动漫上搜索，并下载动漫</summary>
+    
+    
+    
+    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="Python" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    
+    
+    <category term="爬虫" scheme="https://jin-yuhan.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>三角恒等变换</title>
+    <link href="https://jin-yuhan.github.io/posts/ed79c1d6/"/>
+    <id>https://jin-yuhan.github.io/posts/ed79c1d6/</id>
+    <published>2020-04-16T12:07:04.000Z</published>
+    <updated>2020-12-13T08:16:49.728Z</updated>
+    
+    
+    <summary type="html">本文整理了大部分常用的三角比公式</summary>
+    
+    
+    
+    <category term="高考" scheme="https://jin-yuhan.github.io/categories/%E9%AB%98%E8%80%83/"/>
+    
+    <category term="数学" scheme="https://jin-yuhan.github.io/categories/%E9%AB%98%E8%80%83/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="三角恒等式" scheme="https://jin-yuhan.github.io/tags/%E4%B8%89%E8%A7%92%E6%81%92%E7%AD%89%E5%BC%8F/"/>
+    
+  </entry>
+  
+</feed>
