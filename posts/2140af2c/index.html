@@ -1,0 +1,689 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" href="/images/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="Jin Yuhan">
+  <meta name="keywords" content="">
+  <title>计数原理、排列组合、概率论初步 - Jin Yuhan</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/vs2015.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"jin-yuhan.github.io","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Jin Yuhan" type="application/atom+xml">
+</head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>Jin Yuhan</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/bangumis/">
+                <i class="iconfont icon-bilibili-fill"></i>
+                番剧
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" target="_blank" rel="noopener" href="https://travellings.now.sh/">
+                <i class="iconfont icon-friends"></i>
+                开往
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/MyImageStorage@latest/img/article_cover.png') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="计数原理、排列组合、概率论初步">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-author" aria-hidden="true"></i>
+      Jin Yuhan
+    </span>
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-07-03 21:41" pubdate>
+        2020年7月3日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      24
+       分钟
+    </span>
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">计数原理、排列组合、概率论初步</h1>
+            
+            <div class="markdown-body">
+              <h1 id="计数原理"><a href="#计数原理" class="headerlink" title="计数原理"></a>计数原理</h1><h2 id="乘法原理"><a href="#乘法原理" class="headerlink" title="乘法原理"></a>乘法原理</h2><p>如果完成一件事需要$n$个步骤，第$1$步有$m_1$种不同的方法，第$2$步有$m_2$种不同的方法，……，第$n$步有$m_n$种不同方法，那么完成这件事共有</p>
+<script type="math/tex; mode=display">
+N=m_1m_2...m_n</script><p>种不同方法。</p>
+<p><strong><span style="color:red;">注意：必须依次通过每一步骤，才算完成一件事！</span></strong></p>
+<h2 id="加法原理"><a href="#加法原理" class="headerlink" title="加法原理"></a>加法原理</h2><p>如果完成一件事有$n$类办法，在第$1$类办法中有$m_1$种不同的方法，在第$2$类办法中有$m_2$种不同的方法，……，在第$n$类办法中有$m_n$种不同的方法，那么完成这件事共有</p>
+<script type="math/tex; mode=display">
+N=m_1+m_2+...+m_n</script><p>种不同方法。</p>
+<hr>
+<h1 id="排列组合"><a href="#排列组合" class="headerlink" title="排列组合"></a>排列组合</h1><h2 id="排列"><a href="#排列" class="headerlink" title="排列"></a>排列</h2><ul>
+<li><p>一般地，从$n$个<strong>不同元素</strong>中取出$m(m \le n)$个元素，按照<strong>一定的次序</strong>排成一列，叫做：从$n$个不同元素中取出$m$个元素的一个排列。</p>
+</li>
+<li><p>从$n$个<strong>不同元素</strong>中取出$m(m \le n)$个元素的所有排列的个数叫做：从$n$个不同元素中取出$m$个元素的排列数，用符号$P^m_n$或$A^m_n$表示。</p>
+</li>
+</ul>
+<p>根据乘法原理，可知从$n$个元素中取出的第$m(m \le n)$个元素有$n-m+1$种可能，于是一共有</p>
+<script type="math/tex; mode=display">
+n(n-1)(n-2)...(n-m+1)={n!\over(n-m)!}</script><p>种可能。</p>
+<p>因此，</p>
+<script type="math/tex; mode=display">
+A_n^m={n!\over(n-m)!}</script><p>为排列数公式。</p>
+<p>另外，$n$个不同元素全部取出的一个排列，叫$n$个元素的一个全排列。此时$m=n$，有</p>
+<script type="math/tex; mode=display">
+A_n^n={n!\over 0!}=n!</script><h3 id="排列恒等式"><a href="#排列恒等式" class="headerlink" title="排列恒等式"></a>排列恒等式</h3><script type="math/tex; mode=display">
+\begin{aligned}
+A^m_n&=(n-m+1)A^{m-1}_n\\\\
+A^m_n&={n\over n-m} A^m_{n-1}\\\\
+A^m_n&=nA^{m-1}_{n-1} \\\\
+nA^n_n&=A^{n+1}_{n+1}-A^n_n\\\\
+A^m_{n+1}&=A^m_n+mA^{m-1}_n
+\end{aligned}</script><h2 id="组合"><a href="#组合" class="headerlink" title="组合"></a>组合</h2><ul>
+<li><p>一般地，从$n$个<strong>不同元素</strong>中取出$m(m \le n)$个元素，组成一组，叫做：从$n$个不同元素中取出$m$个元素的一个组合。</p>
+</li>
+<li><p>从$n$个<strong>不同元素</strong>中取出$m(m \le n)$个元素的所有组合的个数叫做：从$n$个不同元素中取出$m$个元素的组合数，用符号$C^m_n$表示。</p>
+</li>
+</ul>
+<p>从$n$个不同元素中取出$m$个元素的组合数，可以看做，用从$n$个不同元素中取出$m$个元素的排列数，除以，$m$个不同元素的全排列数，即</p>
+<script type="math/tex; mode=display">
+C_n^m={A_n^m \over A_m^m}=\frac{n!}{m!(n-m)!}</script><p>其中，$m \le n$。这个公式叫组合数公式。</p>
+<h3 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h3><script type="math/tex; mode=display">
+\begin{aligned}
+C_n^m&=C_n^{n-m}\\\\
+C_m^{n+1}&=C_n^m+C_n^{m-1}\\\\
+C_n^0&=1
+\end{aligned}</script><h3 id="组合恒等式"><a href="#组合恒等式" class="headerlink" title="组合恒等式"></a>组合恒等式</h3><script type="math/tex; mode=display">
+\begin{aligned}
+C_n^m&=\frac{n-m+1}{m}C_n^{m-1}\\\\
+C_n^m&=\frac{n}{n-m}C_{n-1}^{m}\\\\
+C_n^m&=\frac{n}{m}C_{n-1}^{m-1}
+\end{aligned}</script><h2 id="排列数与组合数"><a href="#排列数与组合数" class="headerlink" title="排列数与组合数"></a>排列数与组合数</h2><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>排列与元素的次序有关，而组合与元素的次序无关。</p>
+<h3 id="联系"><a href="#联系" class="headerlink" title="联系"></a>联系</h3><script type="math/tex; mode=display">
+A_n^m=m!C_n^m</script><hr>
+<h1 id="概率论初步"><a href="#概率论初步" class="headerlink" title="概率论初步"></a>概率论初步</h1><ul>
+<li><p><strong>概率论：</strong>研究随机现象数量规律的数学分支。</p>
+</li>
+<li><p><strong>试验：</strong>在概率论中，掷骰子、转硬币……都叫试验。</p>
+</li>
+<li><p><strong>基本事件：</strong>一次试验可能出现的结果。</p>
+</li>
+<li><p><strong>随机事件：</strong>试验的结果，简称事件。包括基本事件。用大写字母$A$、$B$等表示。</p>
+</li>
+<li><p><strong>随机现象：</strong>对于在一定条件下可能出现也可能不出现，且有统计规律性的现象。</p>
+</li>
+<li><p>随机事件$A$出现的概率记作$P(A)$。</p>
+</li>
+</ul>
+<h2 id="古典概型"><a href="#古典概型" class="headerlink" title="古典概型"></a>古典概型</h2><h3 id="特点"><a href="#特点" class="headerlink" title="特点"></a>特点</h3><ol>
+<li>一次试验可能出现的基本事件只有有限个。</li>
+<li>每个基本事件出现的可能性相等。</li>
+</ol>
+<h3 id="事件出现的概率"><a href="#事件出现的概率" class="headerlink" title="事件出现的概率"></a>事件出现的概率</h3><p>在古典概型中，事件$A$出现的概率定义为</p>
+<script type="math/tex; mode=display">
+P(A)=\frac{\text{事件}A\text{所包含的基本事件数}}{\text{试验中所有的基本事件数}}</script><p>用集合语言表示，设$\omega_1$，$\omega_2$，…，$\omega_n$表示所有的基本事件，基本事件的集合记为</p>
+<script type="math/tex; mode=display">
+\Omega=\{ \omega_1, \omega_2,...,\omega_n \}</script><p>则</p>
+<script type="math/tex; mode=display">
+P(A)=\frac{A\text{所包含的}\omega\text{的个数}}{\Omega\text{中元素}\omega\text{的总个数}}</script><blockquote>
+<p>$\Omega$既表示基本事件的集合，又可以看做是一个特殊的随机事件，它包含了所有的基本事件，因此它是必然事件。</p>
+</blockquote>
+<p>我们把试验后必定出现的事件叫做<strong>必然事件</strong>，记作$\Omega$，把不可能出现的事件叫做<strong>不可能事件</strong>，记作$\emptyset$。</p>
+<p>注意：</p>
+<ol>
+<li>不可能事件的概率为零，即$P(\emptyset)=0$</li>
+<li>必然事件的概率为$1$，即$P(\Omega)=1$</li>
+<li>对任意随机事件$E$，有$0\le P(E)\le 1$</li>
+<li>若$\Omega=\{ \omega_1, \omega_2,…,\omega_n \}$，则$P(\omega_1)+P(\omega_2)+…+P(\omega_n)=1$</li>
+</ol>
+<h3 id="对立事件"><a href="#对立事件" class="headerlink" title="对立事件"></a>对立事件</h3><p>设$E$和$F$是两个随机事件，若$E$和$F$满足下列条件：</p>
+<ol>
+<li>$E\cup F=\Omega$</li>
+<li>$E\cap F=\emptyset$</li>
+</ol>
+<p>则$E$和$F$叫做对立事件。</p>
+<p>在任何一次试验中，事件$A$要么出现，要么不出现，如果把事件$A$不出现记作事件$\overline{A}$，那么它们互为对立事件，且</p>
+<script type="math/tex; mode=display">
+P(A)+P(\overline{A})=1</script><p>其中$\overline{A}$也可以用集合语言表示为</p>
+<script type="math/tex; mode=display">
+\overline{A}=\{\omega\ |\ \omega \in \Omega,\ \omega \notin A \}=\complement_\Omega A</script><h2 id="频率与概率"><a href="#频率与概率" class="headerlink" title="频率与概率"></a>频率与概率</h2><h3 id="频率"><a href="#频率" class="headerlink" title="频率"></a>频率</h3><p>对于随机事件$E$，如果在$n$次试验中出现了$m(0 \le m \le n)$次，那么$m$称为事件$E$出现的频数，$\frac{m}{n}$称为事件$E$出现的频率。</p>
+<ul>
+<li>在实际中可以把频率作为概率（的估计值）来应用。</li>
+<li>频率也叫经验概率，计算频率通常是为了估计概率。</li>
+</ul>
+<h3 id="频率稳定性（随机现象的统计规律性）"><a href="#频率稳定性（随机现象的统计规律性）" class="headerlink" title="频率稳定性（随机现象的统计规律性）"></a>频率稳定性（随机现象的统计规律性）</h3><ol>
+<li>在大量试验中，事件出现的频率与其概率很接近。</li>
+<li>当试验次数无限增大时，事件出现的频率与概率相差较大的的可能性趋近于$0$。</li>
+</ol>
+<blockquote>
+<p>频率稳定性说明随机事件出现的可能性大小是随机事件本身固有的，是不随人们的意志转移的。</p>
+</blockquote>
+<p><strong><span style="color:red;">注意：在通常意义下，概率不是试验次数无限增大时频率的极限！！！</span></strong></p>
+<h3 id="大数定律"><a href="#大数定律" class="headerlink" title="大数定律"></a>大数定律</h3><p>频率在大数次试验中稳定于某一常数（概率）。</p>
+<h2 id="几何概型"><a href="#几何概型" class="headerlink" title="几何概型"></a>几何概型</h2><p>在几何概型中，事件$A$出现的概率定义为</p>
+<script type="math/tex; mode=display">
+P(A)=\frac{A\text{出现区域或区间的几何度量}}{\text{所考察的整个区域或区间的几何度量}}</script><ul>
+<li><strong>几何度量：</strong>区间长度或图形面积。</li>
+</ul>
+<h2 id="事件-A-与事件-B-的和"><a href="#事件-A-与事件-B-的和" class="headerlink" title="事件$A$与事件$B$的和"></a>事件$A$与事件$B$的和</h2><p>设$A$、$B$为两个随机事件，把 <strong>事件$A$与事件$B$至少有一个出现</strong> 叫做事件$A$与事件$B$的和。<br>它也是一个随机事件，记作$A\cup B$。也可以说成：事件$A$或事件$B$出现。</p>
+<h2 id="事件-A-与事件-B-的积"><a href="#事件-A-与事件-B-的积" class="headerlink" title="事件$A$与事件$B$的积"></a>事件$A$与事件$B$的积</h2><p>设$A$、$B$为两个随机事件，把 <strong>事件$A$与事件$B$同时出现</strong> 叫做事件$A$与事件$B$的积。<br>它也是一个随机事件，记作$A\cap B$或$AB$。</p>
+<h2 id="互不相容事件（互斥事件）"><a href="#互不相容事件（互斥事件）" class="headerlink" title="互不相容事件（互斥事件）"></a>互不相容事件（互斥事件）</h2><p>不可能同时出现的两个事件叫做互不相容事件或互斥事件。<br>相互对立的两个事件是互不相容的。</p>
+<h2 id="概率加法公式"><a href="#概率加法公式" class="headerlink" title="概率加法公式"></a>概率加法公式</h2><p>一般地，事件$A$与事件$B$的和的概率等于事件$A$出现的概率，加上事件$B$出现的概率，减去事件$A$、$B$同时出现的概率，即</p>
+<script type="math/tex; mode=display">
+P(A\cup B)=P(A)+P(B)-P(AB)</script><p>若$A$与$B$是互不相容事件，那么事件$A$与事件$B$的和的概率等于它们的概率和，即</p>
+<script type="math/tex; mode=display">
+P(A\cup B)=P(A)+P(B)</script><h2 id="独立事件积的概率公式"><a href="#独立事件积的概率公式" class="headerlink" title="独立事件积的概率公式"></a>独立事件积的概率公式</h2><p>对于事件$A$及$B$，如果</p>
+<script type="math/tex; mode=display">
+P(AB)=P(A)\cdot P(B)</script><p>那么称事件$A$与事件$B$是统计独立的，简称独立的，也称$A$与$B$相互独立。</p>
+<p>同时，上式为独立事件积的概率公式。</p>
+<p>根据定义，可以证明：如果事件$A$与事件$B$相互独立，$A$的对立事件为$\overline{A}$、$B$的对立事件为$\overline{B}$，那么$\overline{A}$与$B$、$A$与$\overline{B}$、$\overline{A}$与$\overline{B}$也相互独立。</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%AB%98%E8%80%83/">高考</a>
+                    
+                      <a class="hover-with-bg" href="/categories/%E9%AB%98%E8%80%83/%E6%95%B0%E5%AD%A6/">数学</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E8%AE%A1%E6%95%B0%E5%8E%9F%E7%90%86/">计数原理</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%8E%92%E5%88%97%E7%BB%84%E5%90%88/">排列组合</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%A6%82%E7%8E%87%E8%AE%BA/">概率论</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/posts/ca8bfdf3/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">写在前面</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/b6dc2c/">
+                        <span class="hidden-mobile">樱花动漫爬虫</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+  <div id="vcomments"></div>
+  <script type="text/javascript">
+    Fluid.utils.waitElementVisible('vcomments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
+        new Valine({
+          el: "#vcomments",
+          app_id: "HI2Js1k39RFt8RHuCG8e5VjN-gzGzoHsz",
+          app_key: "LcfwljEHCBJDszwBSjQX8Msc",
+          placeholder: "说点什么",
+          path: window.location.pathname,
+          avatar: "retro",
+          meta: ["nick","mail","link"],
+          pageSize: "10",
+          lang: "zh-CN",
+          highlight: true,
+          recordIP: false,
+          serverURLs: "",
+        });
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the
+    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
+  </noscript>
+
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+    ©2020 By Jin Yuhan
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/anchor-js@4.3.0/anchor.min.js" ></script>
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"left","width":180,"height":360},"mobile":{"show":false},"react":{"opacity":0.8},"log":false});</script></body>
+</html>

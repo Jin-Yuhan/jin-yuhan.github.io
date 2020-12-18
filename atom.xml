@@ -6,7 +6,7 @@
   <link href="https://jin-yuhan.github.io/atom.xml" rel="self"/>
   
   <link href="https://jin-yuhan.github.io/"/>
-  <updated>2020-12-13T08:19:04.781Z</updated>
+  <updated>2020-12-18T16:16:20.866Z</updated>
   <id>https://jin-yuhan.github.io/</id>
   
   <author>
@@ -17,102 +17,159 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客介绍</title>
-    <link href="https://jin-yuhan.github.io/posts/36423e12/"/>
-    <id>https://jin-yuhan.github.io/posts/36423e12/</id>
+    <title>旋转矩阵、欧拉角、四元数</title>
+    <link href="https://jin-yuhan.github.io/posts/8e86a5e4/"/>
+    <id>https://jin-yuhan.github.io/posts/8e86a5e4/</id>
+    <published>2020-12-18T16:14:54.000Z</published>
+    <updated>2020-12-18T16:16:20.866Z</updated>
+    
+    
+    <summary type="html">本文介绍旋转矩阵、欧拉角和四元数</summary>
+    
+    
+    
+    <category term="数学杂谈" scheme="https://jin-yuhan.github.io/categories/%E6%95%B0%E5%AD%A6%E6%9D%82%E8%B0%88/"/>
+    
+    
+    <category term="旋转矩阵" scheme="https://jin-yuhan.github.io/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/"/>
+    
+    <category term="欧拉角" scheme="https://jin-yuhan.github.io/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/"/>
+    
+    <category term="四元数" scheme="https://jin-yuhan.github.io/tags/%E5%9B%9B%E5%85%83%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TensorFlow 学习笔记（一）</title>
+    <link href="https://jin-yuhan.github.io/posts/a983ec53/"/>
+    <id>https://jin-yuhan.github.io/posts/a983ec53/</id>
+    <published>2020-12-18T14:37:53.000Z</published>
+    <updated>2020-12-18T16:17:25.498Z</updated>
+    
+    
+    <summary type="html">本文主要介绍了 TensorFlow 在 Windows 平台的下载。</summary>
+    
+    
+    
+    <category term="人工智能" scheme="https://jin-yuhan.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="TensorFlow" scheme="https://jin-yuhan.github.io/tags/TensorFlow/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>TensorFlow 学习笔记（零）</title>
+    <link href="https://jin-yuhan.github.io/posts/463c0d24/"/>
+    <id>https://jin-yuhan.github.io/posts/463c0d24/</id>
+    <published>2020-12-18T14:37:36.000Z</published>
+    <updated>2020-12-18T15:26:31.577Z</updated>
+    
+    
+    <summary type="html">这是「TensorFlow 学习笔记」系列的序言部分。</summary>
+    
+    
+    
+    <category term="人工智能" scheme="https://jin-yuhan.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    
+    
+    <category term="TensorFlow" scheme="https://jin-yuhan.github.io/tags/TensorFlow/"/>
+    
+    <category term="机器学习" scheme="https://jin-yuhan.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+    <category term="深度学习" scheme="https://jin-yuhan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>使用 VSCode 开发 Arduino</title>
+    <link href="https://jin-yuhan.github.io/posts/3d688237/"/>
+    <id>https://jin-yuhan.github.io/posts/3d688237/</id>
+    <published>2020-12-18T14:36:19.000Z</published>
+    <updated>2020-12-18T15:27:35.114Z</updated>
+    
+    
+    <summary type="html">Arduino IDE 虽然简单易上手，但其编码效率低。VSCode 是一款免费的轻量级编辑器，提供了强大的功能与丰富的插件支持。用 VSCode 替换 Arduino IDE 可以大大提升效率。</summary>
+    
+    
+    
+    <category term="实用技巧" scheme="https://jin-yuhan.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="Arduino" scheme="https://jin-yuhan.github.io/tags/Arduino/"/>
+    
+    <category term="VSCode" scheme="https://jin-yuhan.github.io/tags/VSCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>利用 GitHub Actions 自动部署 Hexo 博客至 GitHub Pages</title>
+    <link href="https://jin-yuhan.github.io/posts/13dfd8f4/"/>
+    <id>https://jin-yuhan.github.io/posts/13dfd8f4/</id>
+    <published>2020-12-18T14:32:58.000Z</published>
+    <updated>2020-12-18T16:06:56.198Z</updated>
+    
+    
+    <summary type="html">借助 GitHub Actions 自动化 Hexo 博客的提交，实现GitHub在线写作。</summary>
+    
+    
+    
+    <category term="博客搭建" scheme="https://jin-yuhan.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://jin-yuhan.github.io/tags/Hexo/"/>
+    
+    <category term="GitHub Pages" scheme="https://jin-yuhan.github.io/tags/GitHub-Pages/"/>
+    
+    <category term="GitHub Actions" scheme="https://jin-yuhan.github.io/tags/GitHub-Actions/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo 与 GitHub Pages 搭建静态博客</title>
+    <link href="https://jin-yuhan.github.io/posts/78af359a/"/>
+    <id>https://jin-yuhan.github.io/posts/78af359a/</id>
+    <published>2020-12-18T14:20:27.000Z</published>
+    <updated>2020-12-18T15:39:38.150Z</updated>
+    
+    
+    <summary type="html">本文将介绍如何利用 Hexo 与 GitHub Pages 搭建一个属于自己的静态博客。</summary>
+    
+    
+    
+    <category term="博客搭建" scheme="https://jin-yuhan.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    
+    
+    <category term="Hexo" scheme="https://jin-yuhan.github.io/tags/Hexo/"/>
+    
+    <category term="GitHub Pages" scheme="https://jin-yuhan.github.io/tags/GitHub-Pages/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>写在前面</title>
+    <link href="https://jin-yuhan.github.io/posts/ca8bfdf3/"/>
+    <id>https://jin-yuhan.github.io/posts/ca8bfdf3/</id>
     <published>2020-12-13T05:26:50.000Z</published>
-    <updated>2020-12-13T08:19:04.781Z</updated>
+    <updated>2020-12-18T16:28:51.961Z</updated>
     
     
-    <summary type="html">对博客的简要介绍</summary>
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>【Obsolete】 C#集合：ObjectPool&lt;T&gt;</title>
-    <link href="https://jin-yuhan.github.io/posts/defc3041/"/>
-    <id>https://jin-yuhan.github.io/posts/defc3041/</id>
-    <published>2020-07-31T15:43:06.000Z</published>
-    <updated>2020-11-07T15:07:44.870Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;code&gt;ObjectPool&amp;lt;T&amp;gt;&lt;/code&gt;表示一个对象池，任何实现了&lt;code&gt;IReusableObject&lt;/code&gt;接口并且定义了无参构造函数的对象 都可以被&lt;code&gt;ObjectPool&amp;lt;T&amp;gt;&lt;/code&gt;回收与分配。其内部维护一个可变长的&lt;code&gt;Stack&lt;/code&gt;（LIFO）。&lt;/p&gt;</summary>
+    <summary type="html">欢迎来到我的博客！本博客基于 Hexo 主题 Fluid。本篇文章简要介绍了这个博客，申请友链请在这篇文章的评论区留言。</summary>
     
     
     
-    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    <category term="C#" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/C/"/>
-    
-    
-    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
-    
-    <category term="数据结构" scheme="https://jin-yuhan.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
     
   </entry>
   
   <entry>
-    <title>【Obsolete】 C#集合：PriorityQueue&lt;T&gt;</title>
-    <link href="https://jin-yuhan.github.io/posts/7f9c5592/"/>
-    <id>https://jin-yuhan.github.io/posts/7f9c5592/</id>
-    <published>2020-07-31T15:42:46.000Z</published>
-    <updated>2020-11-07T15:07:50.514Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;code&gt;PriorityQueue&amp;lt;T&amp;gt;&lt;/code&gt;是一个优先级队列，与&lt;code&gt;Java&lt;/code&gt;中的实现方式类似，内部维护了一个小顶堆。&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;Enqueue()&lt;/code&gt;与&lt;code&gt;Dequeue()&lt;/code&gt;的时间复杂度大部分情况为&lt;code&gt;O(log n)&lt;/code&gt;，&lt;code&gt;Contains()&lt;/code&gt;的时间复杂度为&lt;code&gt;O(n)&lt;/code&gt;，&lt;code&gt;Peek()&lt;/code&gt;的时间复杂度为&lt;code&gt;O(1)&lt;/code&gt;。&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;注：元素越小，其优先级越高。&lt;/em&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    <category term="C#" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/C/"/>
-    
-    
-    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
-    
-    <category term="数据结构" scheme="https://jin-yuhan.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Obsolete】 C#集合：NibbleArray</title>
-    <link href="https://jin-yuhan.github.io/posts/970c2a35/"/>
-    <id>https://jin-yuhan.github.io/posts/970c2a35/</id>
-    <published>2020-07-31T15:29:48.000Z</published>
-    <updated>2020-11-07T15:07:38.460Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;code&gt;NibbleArray&lt;/code&gt;是一个压缩数组，每一个元素的大小为4bit。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    <category term="C#" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/C/"/>
-    
-    
-    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
-    
-    <category term="数据结构" scheme="https://jin-yuhan.github.io/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【Obsolete】 计数原理，排列组合，概率论初步</title>
-    <link href="https://jin-yuhan.github.io/posts/d80405e4/"/>
-    <id>https://jin-yuhan.github.io/posts/d80405e4/</id>
+    <title>计数原理、排列组合、概率论初步</title>
+    <link href="https://jin-yuhan.github.io/posts/2140af2c/"/>
+    <id>https://jin-yuhan.github.io/posts/2140af2c/</id>
     <published>2020-07-03T13:41:05.000Z</published>
-    <updated>2020-11-08T06:16:24.799Z</updated>
+    <updated>2020-12-18T11:54:09.046Z</updated>
     
     
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;计数原理，排列组合，概率论初步；简单整理点概念和公式。&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
+    <summary type="html">简单整理了计数原理、排列组合、概率论初步三章内容的概念与公式。适用于高考数学的复习。</summary>
     
     
     
@@ -134,19 +191,19 @@
     <link href="https://jin-yuhan.github.io/posts/b6dc2c/"/>
     <id>https://jin-yuhan.github.io/posts/b6dc2c/</id>
     <published>2020-04-19T14:58:39.000Z</published>
-    <updated>2020-12-13T08:23:17.901Z</updated>
+    <updated>2020-12-18T12:20:18.269Z</updated>
     
     
-    <summary type="html">使用python实现在樱花动漫上搜索，并下载动漫</summary>
+    <summary type="html">使用python实现在樱花动漫上搜索并下载动漫。</summary>
     
     
     
-    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
-    
-    <category term="Python" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/Python/"/>
+    <category term="实用工具" scheme="https://jin-yuhan.github.io/categories/%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
     
     
-    <category term="爬虫" scheme="https://jin-yuhan.github.io/tags/%E7%88%AC%E8%99%AB/"/>
+    <category term="Python" scheme="https://jin-yuhan.github.io/tags/Python/"/>
+    
+    <category term="网页爬虫" scheme="https://jin-yuhan.github.io/tags/%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB/"/>
     
   </entry>
   
@@ -155,10 +212,10 @@
     <link href="https://jin-yuhan.github.io/posts/ed79c1d6/"/>
     <id>https://jin-yuhan.github.io/posts/ed79c1d6/</id>
     <published>2020-04-16T12:07:04.000Z</published>
-    <updated>2020-12-13T08:16:49.728Z</updated>
+    <updated>2020-12-18T11:14:38.560Z</updated>
     
     
-    <summary type="html">本文整理了大部分常用的三角比公式</summary>
+    <summary type="html">整理了部分三角恒等式，例如：诱导公式、和差角、倍角、升幂、降幂、辅助角等。适用于高考数学的复习。</summary>
     
     
     
