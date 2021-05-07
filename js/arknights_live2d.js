@@ -29,27 +29,16 @@ function ArknightsLive2D(config) {
 }
 
 ArknightsLive2D.prototype = {
-    lazyInit: function () {
-        var initWrap = () => {
-            this.triggerEvents.forEach(e => window.removeEventListener(e, initWrap));
-            this.init();
-        };
-        this.triggerEvents.forEach(e => window.addEventListener(e, initWrap));
-    },
-
-    init: function () {
+    preload: function () {
         let c = this.config;
 
         ArknightsLive2D.downloadBinary(this.getUrl(c.skeleton), data => {
             widget = document.createElement("div");
-            this.widgetContainer.appendChild(widget);
-
             for (var prop in c.style) {
                 widget.style.setProperty(prop, c.style[prop]);
             }
-
-            this.audio.addEventListener("ended", () => this.isVoicePlaying = false);
-            this.triggerEvents.forEach(e => window.addEventListener(e, this.tryPlayingIdleVoice.bind(this)));
+            this.widgetContainer.style.display = "none"; // 先隐藏
+            this.widgetContainer.appendChild(widget);
 
             var skeletonJson = new spine.SkeletonJsonConverter(data, 1);
             skeletonJson.convertToJson();
@@ -69,23 +58,33 @@ ArknightsLive2D.prototype = {
     },
 
     spineWidgetSuccessCallback: function (widget) {
-        this.widget = widget;
-        this.playVoice(this.getVoice("start"));
-
-        this.widget.canvas.onclick = this.interact.bind(this);
-        this.widget.state.addListener({
-            complete: entry => {
-                // 如果音频没播放完就一直循环指定的动画，而不是回到闲置动画
-                if (this.isVoicePlaying && entry.loop) {
-                    this.playAnimation({
-                        name: entry.animation.name,
-                        loop: true
-                    });
-                } else {
-                    this.playAnimation(this.animationQueue.shift() || this.getAnimationList("idle"));
+        var init = () => {
+            this.triggerEvents.forEach(e => window.removeEventListener(e, init));
+            this.triggerEvents.forEach(e => window.addEventListener(e, this.tryPlayingIdleVoice.bind(this)));
+            this.audio.addEventListener("ended", () => this.isVoicePlaying = false);
+            this.widget.canvas.onclick = this.interact.bind(this);
+            this.widget.state.addListener({
+                complete: entry => {
+                    // 如果音频没播放完就一直循环指定的动画，而不是回到闲置动画
+                    if (this.isVoicePlaying && entry.loop) {
+                        this.playAnimation({
+                            name: entry.animation.name,
+                            loop: true
+                        });
+                    } else {
+                        this.playAnimation(this.animationQueue.shift() || this.getAnimationList("idle"));
+                    }
                 }
-            }
-        });
+            });
+
+            this.widget.state.timeScale = 1; // 开始播放动画
+            this.playVoice(this.getVoice("start"));
+            this.widgetContainer.style.display = "block";
+        };
+
+        this.widget = widget;
+        this.widget.state.timeScale = 0; // 停止动画播放
+        this.triggerEvents.forEach(e => window.addEventListener(e, init));
     },
 
     interact: function () {
