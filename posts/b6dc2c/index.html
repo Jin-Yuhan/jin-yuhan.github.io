@@ -8,16 +8,17 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" href="/images/favicon.ico">
+  <link rel="icon" href="/images/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
-  <meta name="author" content="Jin Yuhan">
+  <meta name="description" content="使用python实现在樱花动漫上搜索并下载动漫。">
+  <meta name="author" content="Shieru">
   <meta name="keywords" content="">
-  <title>樱花动漫爬虫 - Jin Yuhan</title>
+  
+  <title>樱花动漫爬虫 - Shieru</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"jin-yuhan.github.io","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"jin-yuhan.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Jin Yuhan" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Shieru" type="application/atom+xml">
 </head>
 
 
@@ -68,7 +69,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Jin Yuhan</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Shieru</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -157,9 +158,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" target="_blank" rel="noopener" href="https://travellings.now.sh/">
-                <i class="iconfont icon-friends"></i>
-                开往
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
           
@@ -169,22 +170,22 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
+              <a class="nav-link" target="_blank" rel="noopener" href="https://travellings.now.sh">
+                <i class="iconfont icon-map"></i>
+                开往
               </a>
             </li>
           
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -193,8 +194,8 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/MyImageStorage@latest/img/python_logo.jpg') no-repeat center center;
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/python_logo.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -208,7 +209,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-author" aria-hidden="true"></i>
-      Jin Yuhan
+      Shieru
     </span>
   
   
@@ -226,7 +227,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      766 字
+      661 字
     </span>
   
 
@@ -236,20 +237,12 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      13
+      11
        分钟
     </span>
   
 
   
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
   
 </div>
 
@@ -266,20 +259,19 @@
     
       
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">樱花动漫爬虫</h1>
             
             <div class="markdown-body">
-              <h1 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h1><p>模仿樱花动漫官网的逻辑，查询到目标动漫的播放网页。在该网页的<code>html</code>文件中匹配<code>(/playdata/(\d+)/(\d+)(\.)js(\?)(\d+)(\.)(\d+))</code>，找到保存了该动漫下载路径列表的<code>js</code>文件，通过字符串操作，将文件内容转为<code>json</code>并获取视频列表。最后根据输入，得到对应的下载路径，请求下载。</p>
-<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><p>下载的视频文件默认保存在代码所在目录下的<code>animations\$&#123;animation_name&#125;\$&#123;index&#125;.mp4</code>。<br>其中<code>animation_name</code>是动漫的全名，<code>index</code>是对应的集数。</p>
-<h1 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h1><figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> quote<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><span class="hljs-keyword">import</span> requests, sys, re, json, os<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exit</span>(<span class="hljs-params">msg: <span class="hljs-built_in">str</span></span>):</span><br>    print(msg)<br>    os.system(<span class="hljs-string">&#x27;pause&#x27;</span>)<br>    sys.exit()<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_request</span>(<span class="hljs-params">url, timeout=<span class="hljs-number">20</span></span>) -&gt; requests.Response:</span><br>    print(<span class="hljs-string">&#x27;请求：%s&#x27;</span> % url)<br>    <br>    <span class="hljs-keyword">try</span>:<br>        r = requests.get(url, timeout=timeout)<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        print(e)<br>        exit(<span class="hljs-string">&#x27;请求失败！&#x27;</span>)<br>    <span class="hljs-keyword">return</span> r<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span>() -&gt; BeautifulSoup:</span><br>    sw = quote(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;搜索: &#x27;</span>).encode(<span class="hljs-string">&#x27;gb2312&#x27;</span>))<br>    r = get_request(<span class="hljs-string">&#x27;http://www.imomoe.in/search.asp?searchword=&#x27;</span> + sw)<br>    <span class="hljs-keyword">return</span> BeautifulSoup(r.content.decode(<span class="hljs-string">&quot;gbk&quot;</span>).encode(<span class="hljs-string">&quot;utf-8&quot;</span>), <span class="hljs-string">&#x27;html.parser&#x27;</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_anim_list</span>(<span class="hljs-params">soup: BeautifulSoup</span>) -&gt; list:</span><br>    divs = soup.find_all(<span class="hljs-string">&#x27;div&#x27;</span>, attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;pics&#x27;</span>&#125;)<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> (<span class="hljs-built_in">len</span>(divs) == <span class="hljs-number">2</span>):<br>        exit(<span class="hljs-string">&#x27;无法获取动漫列表！&#x27;</span>)<br>    <br>    anim_list = divs[<span class="hljs-number">0</span>].ul<br>    result = []<br>    <br>    <span class="hljs-keyword">for</span> li <span class="hljs-keyword">in</span> anim_list.find_all(<span class="hljs-string">&#x27;li&#x27;</span>):<br>        a = li.h2.a<br>        title = a[<span class="hljs-string">&#x27;title&#x27;</span>]<br>        num = a[<span class="hljs-string">&#x27;href&#x27;</span>].replace(<span class="hljs-string">&#x27;/view/&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>).replace(<span class="hljs-string">&#x27;.html&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br>        result.append((title, num))<br>    <span class="hljs-keyword">return</span> result <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(result) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> exit(<span class="hljs-string">&#x27;无结果&#x27;</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_anim_id</span>(<span class="hljs-params">list_len</span>) -&gt; int:</span><br>    index = -<span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> index &gt;= list_len <span class="hljs-keyword">or</span> index &lt; <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">try</span>:<br>            index = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;选择一个: &#x27;</span>)) - <span class="hljs-number">1</span><br>        <span class="hljs-keyword">except</span>:<br>            <span class="hljs-keyword">continue</span><br>    <span class="hljs-keyword">return</span> index<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_episode_list</span>(<span class="hljs-params">anim_id: <span class="hljs-built_in">str</span></span>) -&gt; list:</span><br>    r = get_request(<span class="hljs-string">&#x27;http://www.imomoe.in/player/&#x27;</span> + anim_id + <span class="hljs-string">&#x27;-0-0.html&#x27;</span>)<br>    match = re.search(<span class="hljs-string">r&#x27;&quot;(/playdata/(\d+)/(\d+)(\.)js(\?)(\d+)(\.)(\d+))&quot;&#x27;</span>, r.content.decode(<span class="hljs-string">&quot;gbk&quot;</span>))<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> match:<br>        exit(<span class="hljs-string">&#x27;无法获取集数列表地址！&#x27;</span>)<br>    <br>    r = get_request(<span class="hljs-string">&#x27;http://www.imomoe.in&#x27;</span> + match.group(<span class="hljs-number">1</span>))<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> r:<br>        exit(<span class="hljs-string">&#x27;无法获取集数列表！&#x27;</span>)<br>    <br>    js = re.sub(<span class="hljs-string">r&quot;,urlinfo=&#x27;http://&#x27;\+document.domain\+&#x27;/player/(\d+)-&lt;from&gt;-&lt;pos&gt;.html&#x27;;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, r.content.decode(<span class="hljs-string">&quot;gbk&quot;</span>)\<br>        .replace(<span class="hljs-string">&#x27;var VideoListJson=&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)).replace(<span class="hljs-string">&quot;&#x27;&quot;</span>, <span class="hljs-string">&#x27;&quot;&#x27;</span>)  <span class="hljs-comment"># !转成合法json</span><br>    <span class="hljs-keyword">return</span> json.loads(js)[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_episode_id_list</span>(<span class="hljs-params">episode_list: <span class="hljs-built_in">list</span></span>) -&gt; list:</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        input_str = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;选择下载集数（多个使用单个空格分隔，输入&quot;all&quot;下载全部）：&#x27;</span>)<br>        <span class="hljs-keyword">if</span> input_str.strip().lower() == <span class="hljs-string">&#x27;all&#x27;</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(episode_list))<br>        <span class="hljs-keyword">try</span>:<br>            <span class="hljs-keyword">return</span> [<span class="hljs-built_in">int</span>(i) - <span class="hljs-number">1</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> input_str.split(<span class="hljs-string">&#x27; &#x27;</span>)]<br>        <span class="hljs-keyword">except</span>:<br>            <span class="hljs-keyword">continue</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">download_video</span>(<span class="hljs-params">url: <span class="hljs-built_in">str</span>, path: <span class="hljs-built_in">str</span></span>):</span><br>    print(<span class="hljs-string">&#x27;下载：%s&#x27;</span> % url)<br>    r = requests.get(url, stream=<span class="hljs-literal">True</span>)<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> mp4:<br>        <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> r.iter_content(chunk_size=<span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>):<br>            <span class="hljs-keyword">if</span> chunk:<br>                mp4.write(chunk)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    soup = search()<br>    anim_list = get_anim_list(soup)<br>    <br>    print(<span class="hljs-string">&#x27;\n\n搜索结果：&#x27;</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(anim_list)):<br>        print(<span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-built_in">str</span>(i + <span class="hljs-number">1</span>) + <span class="hljs-string">&#x27;.&#x27;</span> + anim_list[i][<span class="hljs-number">0</span>])<br>    <br>    selected_index = get_anim_id(<span class="hljs-built_in">len</span>(anim_list))<br>    episode_list = get_episode_list(anim_list[selected_index][<span class="hljs-number">1</span>])<br>    <br>    print(<span class="hljs-string">&#x27;\n\n共%d集&#x27;</span> % <span class="hljs-built_in">len</span>(episode_list))<br>    indexes = get_episode_id_list(episode_list)<br>    directory = os.path.join(os.path.dirname(__file__), <span class="hljs-string">&#x27;animations&#x27;</span>, anim_list[selected_index][<span class="hljs-number">0</span>])<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(directory):<br>        os.makedirs(directory)<br>    <br>    print(<span class="hljs-string">&#x27;\n\n开始下载...&#x27;</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> indexes:<br>        <span class="hljs-keyword">if</span> i &gt;= <span class="hljs-built_in">len</span>(episode_list) <span class="hljs-keyword">or</span> i &lt; <span class="hljs-number">0</span>:<br>            print(<span class="hljs-string">&#x27;忽略第%d集&#x27;</span> % (i + <span class="hljs-number">1</span>))<br>            <span class="hljs-keyword">continue</span><br>        <br>        download_video(episode_list[i].split(<span class="hljs-string">&#x27;$&#x27;</span>)[<span class="hljs-number">1</span>], os.path.join(directory, <span class="hljs-built_in">str</span>(i + <span class="hljs-number">1</span>) + <span class="hljs-string">&#x27;.mp4&#x27;</span>).strip())<br>        print(<span class="hljs-string">&#x27;成功下载第%d集&#x27;</span> % (i + <span class="hljs-number">1</span>))<br>    <br>    os.system(<span class="hljs-string">&#x27;pause&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+              <p>下载的视频文件默认保存在代码所在目录下的<code>animations\$&#123;animation_name&#125;\$&#123;index&#125;.mp4</code>。<br>其中<code>animation_name</code>是动漫的全名，<code>index</code>是对应的集数。</p>
+<figure class="highlight python"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python"><span class="hljs-keyword">from</span> urllib.parse <span class="hljs-keyword">import</span> quote<br><span class="hljs-keyword">from</span> bs4 <span class="hljs-keyword">import</span> BeautifulSoup<br><span class="hljs-keyword">import</span> requests, sys, re, json, os<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">exit</span>(<span class="hljs-params">msg: <span class="hljs-built_in">str</span></span>):</span><br>    print(msg)<br>    os.system(<span class="hljs-string">&#x27;pause&#x27;</span>)<br>    sys.exit()<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_request</span>(<span class="hljs-params">url, timeout=<span class="hljs-number">20</span></span>) -&gt; requests.Response:</span><br>    print(<span class="hljs-string">&#x27;请求：%s&#x27;</span> % url)<br>    <br>    <span class="hljs-keyword">try</span>:<br>        r = requests.get(url, timeout=timeout)<br>    <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>        print(e)<br>        exit(<span class="hljs-string">&#x27;请求失败！&#x27;</span>)<br>    <span class="hljs-keyword">return</span> r<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">search</span>() -&gt; BeautifulSoup:</span><br>    sw = quote(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;搜索: &#x27;</span>).encode(<span class="hljs-string">&#x27;gb2312&#x27;</span>))<br>    r = get_request(<span class="hljs-string">&#x27;http://www.imomoe.in/search.asp?searchword=&#x27;</span> + sw)<br>    <span class="hljs-keyword">return</span> BeautifulSoup(r.content.decode(<span class="hljs-string">&quot;gbk&quot;</span>).encode(<span class="hljs-string">&quot;utf-8&quot;</span>), <span class="hljs-string">&#x27;html.parser&#x27;</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_anim_list</span>(<span class="hljs-params">soup: BeautifulSoup</span>) -&gt; list:</span><br>    divs = soup.find_all(<span class="hljs-string">&#x27;div&#x27;</span>, attrs=&#123;<span class="hljs-string">&#x27;class&#x27;</span>: <span class="hljs-string">&#x27;pics&#x27;</span>&#125;)<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> (<span class="hljs-built_in">len</span>(divs) == <span class="hljs-number">2</span>):<br>        exit(<span class="hljs-string">&#x27;无法获取动漫列表！&#x27;</span>)<br>    <br>    anim_list = divs[<span class="hljs-number">0</span>].ul<br>    result = []<br>    <br>    <span class="hljs-keyword">for</span> li <span class="hljs-keyword">in</span> anim_list.find_all(<span class="hljs-string">&#x27;li&#x27;</span>):<br>        a = li.h2.a<br>        title = a[<span class="hljs-string">&#x27;title&#x27;</span>]<br>        num = a[<span class="hljs-string">&#x27;href&#x27;</span>].replace(<span class="hljs-string">&#x27;/view/&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>).replace(<span class="hljs-string">&#x27;.html&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)<br>        result.append((title, num))<br>    <span class="hljs-keyword">return</span> result <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(result) &gt; <span class="hljs-number">0</span> <span class="hljs-keyword">else</span> exit(<span class="hljs-string">&#x27;无结果&#x27;</span>)<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_anim_id</span>(<span class="hljs-params">list_len</span>) -&gt; int:</span><br>    index = -<span class="hljs-number">1</span><br>    <span class="hljs-keyword">while</span> index &gt;= list_len <span class="hljs-keyword">or</span> index &lt; <span class="hljs-number">0</span>:<br>        <span class="hljs-keyword">try</span>:<br>            index = <span class="hljs-built_in">int</span>(<span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;选择一个: &#x27;</span>)) - <span class="hljs-number">1</span><br>        <span class="hljs-keyword">except</span>:<br>            <span class="hljs-keyword">continue</span><br>    <span class="hljs-keyword">return</span> index<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_episode_list</span>(<span class="hljs-params">anim_id: <span class="hljs-built_in">str</span></span>) -&gt; list:</span><br>    r = get_request(<span class="hljs-string">&#x27;http://www.imomoe.in/player/&#x27;</span> + anim_id + <span class="hljs-string">&#x27;-0-0.html&#x27;</span>)<br>    match = re.search(<span class="hljs-string">r&#x27;&quot;(/playdata/(\d+)/(\d+)(\.)js(\?)(\d+)(\.)(\d+))&quot;&#x27;</span>, r.content.decode(<span class="hljs-string">&quot;gbk&quot;</span>))<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> match:<br>        exit(<span class="hljs-string">&#x27;无法获取集数列表地址！&#x27;</span>)<br>    <br>    r = get_request(<span class="hljs-string">&#x27;http://www.imomoe.in&#x27;</span> + match.group(<span class="hljs-number">1</span>))<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> r:<br>        exit(<span class="hljs-string">&#x27;无法获取集数列表！&#x27;</span>)<br>    <br>    js = re.sub(<span class="hljs-string">r&quot;,urlinfo=&#x27;http://&#x27;\+document.domain\+&#x27;/player/(\d+)-&lt;from&gt;-&lt;pos&gt;.html&#x27;;&quot;</span>, <span class="hljs-string">&quot;&quot;</span>, r.content.decode(<span class="hljs-string">&quot;gbk&quot;</span>)\<br>        .replace(<span class="hljs-string">&#x27;var VideoListJson=&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>)).replace(<span class="hljs-string">&quot;&#x27;&quot;</span>, <span class="hljs-string">&#x27;&quot;&#x27;</span>)  <span class="hljs-comment"># !转成合法json</span><br>    <span class="hljs-keyword">return</span> json.loads(js)[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>]<br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">get_episode_id_list</span>(<span class="hljs-params">episode_list: <span class="hljs-built_in">list</span></span>) -&gt; list:</span><br>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:<br>        input_str = <span class="hljs-built_in">input</span>(<span class="hljs-string">&#x27;选择下载集数（多个使用单个空格分隔，输入&quot;all&quot;下载全部）：&#x27;</span>)<br>        <span class="hljs-keyword">if</span> input_str.strip().lower() == <span class="hljs-string">&#x27;all&#x27;</span>:<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(episode_list))<br>        <span class="hljs-keyword">try</span>:<br>            <span class="hljs-keyword">return</span> [<span class="hljs-built_in">int</span>(i) - <span class="hljs-number">1</span> <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> input_str.split(<span class="hljs-string">&#x27; &#x27;</span>)]<br>        <span class="hljs-keyword">except</span>:<br>            <span class="hljs-keyword">continue</span><br><br><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">download_video</span>(<span class="hljs-params">url: <span class="hljs-built_in">str</span>, path: <span class="hljs-built_in">str</span></span>):</span><br>    print(<span class="hljs-string">&#x27;下载：%s&#x27;</span> % url)<br>    r = requests.get(url, stream=<span class="hljs-literal">True</span>)<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> mp4:<br>        <span class="hljs-keyword">for</span> chunk <span class="hljs-keyword">in</span> r.iter_content(chunk_size=<span class="hljs-number">1024</span> * <span class="hljs-number">1024</span>):<br>            <span class="hljs-keyword">if</span> chunk:<br>                mp4.write(chunk)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    soup = search()<br>    anim_list = get_anim_list(soup)<br>    <br>    print(<span class="hljs-string">&#x27;\n\n搜索结果：&#x27;</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(anim_list)):<br>        print(<span class="hljs-string">&#x27;\t&#x27;</span> + <span class="hljs-built_in">str</span>(i + <span class="hljs-number">1</span>) + <span class="hljs-string">&#x27;.&#x27;</span> + anim_list[i][<span class="hljs-number">0</span>])<br>    <br>    selected_index = get_anim_id(<span class="hljs-built_in">len</span>(anim_list))<br>    episode_list = get_episode_list(anim_list[selected_index][<span class="hljs-number">1</span>])<br>    <br>    print(<span class="hljs-string">&#x27;\n\n共%d集&#x27;</span> % <span class="hljs-built_in">len</span>(episode_list))<br>    indexes = get_episode_id_list(episode_list)<br>    directory = os.path.join(os.path.dirname(__file__), <span class="hljs-string">&#x27;animations&#x27;</span>, anim_list[selected_index][<span class="hljs-number">0</span>])<br>    <br>    <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(directory):<br>        os.makedirs(directory)<br>    <br>    print(<span class="hljs-string">&#x27;\n\n开始下载...&#x27;</span>)<br>    <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> indexes:<br>        <span class="hljs-keyword">if</span> i &gt;= <span class="hljs-built_in">len</span>(episode_list) <span class="hljs-keyword">or</span> i &lt; <span class="hljs-number">0</span>:<br>            print(<span class="hljs-string">&#x27;忽略第%d集&#x27;</span> % (i + <span class="hljs-number">1</span>))<br>            <span class="hljs-keyword">continue</span><br>        <br>        download_video(episode_list[i].split(<span class="hljs-string">&#x27;$&#x27;</span>)[<span class="hljs-number">1</span>], os.path.join(directory, <span class="hljs-built_in">str</span>(i + <span class="hljs-number">1</span>) + <span class="hljs-string">&#x27;.mp4&#x27;</span>).strip())<br>        print(<span class="hljs-string">&#x27;成功下载第%d集&#x27;</span> % (i + <span class="hljs-number">1</span>))<br>    <br>    os.system(<span class="hljs-string">&#x27;pause&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -305,10 +297,14 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
-                <div class="post-prevnext row">
+                <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
                     
@@ -335,15 +331,17 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
-  <div id="vcomments"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('vcomments', function() {
+    Fluid.utils.loadComments('#valine', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
         new Valine({
-          el: "#vcomments",
+          el: "#valine",
           app_id: "HI2Js1k39RFt8RHuCG8e5VjN-gzGzoHsz",
           app_key: "LcfwljEHCBJDszwBSjQX8Msc",
           placeholder: "说点什么",
@@ -359,9 +357,7 @@
       });
     });
   </script>
-  <noscript>Please enable JavaScript to view the
-    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
-  </noscript>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>
@@ -383,6 +379,12 @@
 </div>
 
 <!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+       <div style="text-align:center;"> <span>如果您愿意请我喝一杯咖啡的话，可以使用微信扫描下方的二维码。</span> <img src="/images/wechatpay.jpg" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:200px; height:200px;"> </div> 
+    </div>
+  </div>
 
 
     
@@ -422,7 +424,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-    ©2020 By Jin Yuhan
+    <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> Theme <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a><br> ©2020-2021 Shieru 
   </div>
   
 
@@ -431,12 +433,12 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -444,7 +446,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -469,8 +471,6 @@
 
 
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
 
 
 
@@ -491,11 +491,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -517,6 +518,22 @@
 <script  src="/js/boot.js" ></script>
 
 
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"left","width":180,"height":360},"mobile":{"show":false},"react":{"opacity":0.8},"log":false});</script></body>
+<!-- hexo injector body_end start -->
+    <div id="arknights-live2d">
+        <audio><source></source></audio>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/js/spine-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/js/spine-skeleton-binary3.5.51.js"></script>
+    <script src="/js/arknights_live2d.js"></script>
+    <script>
+        new ArknightsLive2D({
+            urlPrefix: "https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/live2d/char_1012_skadi2/",
+            style: {"width":"200px","height":"200px","position":"fixed","left":"0","bottom":"0","z-Index":"999"},
+            skin: "default",
+            atlas: "char_1012_skadi2.atlas",
+            skeleton: "char_1012_skadi2.skel",
+            behaviors: {"start":{"animation":"Start","voice":"audios/CN_042.wav.bytes"},"idle":{"animation":"Idle","voice":"audios/CN_010.wav.bytes","maxMinutes":5},"interact":{"animations":[{"name":"Skill_2_Begin","loop":false},{"name":"Skill_2_Loop","loop":true}],"voices":["audios/CN_002.wav.bytes","audios/CN_003.wav.bytes","audios/CN_004.wav.bytes","audios/CN_005.wav.bytes","audios/CN_006.wav.bytes","audios/CN_007.wav.bytes","audios/CN_008.wav.bytes","audios/CN_009.wav.bytes","audios/CN_034.wav.bytes","audios/CN_036.wav.bytes"]}}
+        }).lazyInit();
+    </script>
+    <!-- hexo injector body_end end --></body>
 </html>

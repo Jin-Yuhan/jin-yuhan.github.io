@@ -8,16 +8,17 @@
 <head>
   <meta charset="UTF-8">
   <link rel="apple-touch-icon" sizes="76x76" href="/images/favicon.ico">
-  <link rel="icon" type="image/png" href="/images/favicon.ico">
+  <link rel="icon" href="/images/favicon.ico">
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="description" content="">
-  <meta name="author" content="Jin Yuhan">
+  <meta name="description" content="借助 GitHub Actions 自动化 Hexo 博客的提交，实现GitHub在线写作。">
+  <meta name="author" content="Shieru">
   <meta name="keywords" content="">
-  <title>利用 GitHub Actions 自动部署 Hexo 博客至 GitHub Pages - Jin Yuhan</title>
+  
+  <title>利用 GitHub Actions 自动部署 Hexo 博客至 GitHub Pages - Shieru</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
@@ -55,11 +56,11 @@
 
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
-    var CONFIG = {"hostname":"jin-yuhan.github.io","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+    var CONFIG = {"hostname":"jin-yuhan.github.io","root":"/","version":"1.8.10","typing":{"enable":true,"typeSpeed":70,"cursorChar":"|","loop":false},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":"#"},"progressbar":{"enable":false,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"copy_btn":true,"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
   </script>
   <script  src="/js/utils.js" ></script>
   <script  src="/js/color-schema.js" ></script>
-<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Jin Yuhan" type="application/atom+xml">
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Shieru" type="application/atom+xml">
 </head>
 
 
@@ -68,7 +69,7 @@
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
-       href="/">&nbsp;<strong>Jin Yuhan</strong>&nbsp;</a>
+       href="/">&nbsp;<strong>Shieru</strong>&nbsp;</a>
 
     <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
             data-target="#navbarSupportedContent"
@@ -157,9 +158,9 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" target="_blank" rel="noopener" href="https://travellings.now.sh/">
-                <i class="iconfont icon-friends"></i>
-                开往
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
               </a>
             </li>
           
@@ -169,22 +170,22 @@
           
           
             <li class="nav-item">
-              <a class="nav-link" href="/about/">
-                <i class="iconfont icon-user-fill"></i>
-                关于
+              <a class="nav-link" target="_blank" rel="noopener" href="https://travellings.now.sh">
+                <i class="iconfont icon-map"></i>
+                开往
               </a>
             </li>
           
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+            <a class="nav-link" target="_self" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
                 class="iconfont icon-search"></i>&nbsp;</a>
           </li>
         
         
           <li class="nav-item" id="color-toggle-btn">
-            <a class="nav-link" href="javascript:">&nbsp;<i
+            <a class="nav-link" target="_self">&nbsp;<i
                 class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
@@ -193,8 +194,8 @@
   </div>
 </nav>
 
-    <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/MyImageStorage@latest/img/github_actions_logo.jpg') no-repeat center center;
+    <div class="banner" id="banner" parallax=true
+         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/github_actions_logo.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -208,7 +209,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-author" aria-hidden="true"></i>
-      Jin Yuhan
+      Shieru
     </span>
   
   
@@ -226,7 +227,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      403 字
+      746 字
     </span>
   
 
@@ -236,20 +237,12 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      10
        分钟
     </span>
   
 
   
-  
-    
-      <!-- 不蒜子统计文章PV -->
-      <span id="busuanzi_container_page_pv" style="display: none">
-        <i class="iconfont icon-eye" aria-hidden="true"></i>
-        <span id="busuanzi_value_page_pv"></span> 次
-      </span>
-    
   
 </div>
 
@@ -266,29 +259,75 @@
     
       
 
-<div class="container-fluid">
-  <div class="row">
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
     <div class="d-none d-lg-block col-lg-2"></div>
-    <div class="col-lg-8 nopadding-md">
-      <div class="container nopadding-md" id="board-ctn">
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
             <h1 style="display: none">利用 GitHub Actions 自动部署 Hexo 博客至 GitHub Pages</h1>
             
             <div class="markdown-body">
-              <h1 id="简介-GitHub-Actions"><a href="#简介-GitHub-Actions" class="headerlink" title="简介 GitHub Actions"></a>简介 GitHub Actions</h1><p>GitHub Actions 是 GitHub 官方推出的持续集成/部署模块服务（CI/CD），只需一个配置文件即可自动开启服务，而且自带云环境运行。</p>
-<h2 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h2><ol>
-<li><code>workflow</code>：持续集成一次运行的过程。</li>
-<li><code>job</code>：一个 <code>workflow</code> 由一个或多个 <code>job</code> 构成。</li>
-<li><code>step</code>：每个 <code>job</code> 由多个 <code>step</code> 构成，一步步完成。</li>
-<li><code>action</code>：每个 <code>step</code> 可以依次执行一个或多个<code>action</code>。</li>
-</ol>
-<h1 id="创建代码仓库"><a href="#创建代码仓库" class="headerlink" title="创建代码仓库"></a>创建代码仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/MyImageStorage@latest/img/github_new_repo_auto_blog.png" srcset="/img/loading.gif" alt="创建代码仓库"></p>
-<h1 id="创建-workflow"><a href="#创建-workflow" class="headerlink" title="创建 workflow"></a>创建 workflow</h1><p>在博客目录下创建<code>.github/workflows/xxx.yml</code>文件，文件名任意。</p>
-<p>文件内容如下，根据自己的需求增删 <code>step</code>：<br><figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span>                      <span class="hljs-comment"># Actions 显示的名字，随意设置</span><br><br><span class="hljs-attr">on:</span> [<span class="hljs-string">push</span>]                        <span class="hljs-comment"># 监听到 push 事件后触发</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br><br>    <span class="hljs-attr">steps:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span>              <span class="hljs-comment"># 拉取当前执行 Actions 仓库的指定分支</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">ref:</span> <span class="hljs-string">master</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Update</span> <span class="hljs-string">Submodule</span>      <span class="hljs-comment"># 如果仓库有 submodule，在这里更新，没有则删掉此步骤</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">submodule</span> <span class="hljs-string">init</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">submodule</span> <span class="hljs-string">update</span> <span class="hljs-string">--remote</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Node</span>            <span class="hljs-comment"># 安装 Node 环境</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">node-version:</span> <span class="hljs-string">&quot;10.x&quot;</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Generate</span>         <span class="hljs-comment"># 安装 Hexo 依赖并且生成静态文件</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>        <span class="hljs-string">rm</span> <span class="hljs-string">-f</span> <span class="hljs-string">.yarnclean</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">--frozen-lockfile</span> <span class="hljs-string">--ignore-engines</span> <span class="hljs-string">--ignore-optional</span> <span class="hljs-string">--non-interactive</span> <span class="hljs-string">--silent</span> <span class="hljs-string">--ignore-scripts</span> <span class="hljs-string">--production=false</span><br>        <span class="hljs-string">rm</span> <span class="hljs-string">-rf</span> <span class="hljs-string">./public</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">run</span> <span class="hljs-string">hexo</span> <span class="hljs-string">clean</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">run</span> <span class="hljs-string">hexo</span> <span class="hljs-string">bangumi</span> <span class="hljs-string">-u</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">run</span> <span class="hljs-string">hexo</span> <span class="hljs-string">generate</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Deploy</span>           <span class="hljs-comment"># 部署步骤，这里以 hexo deploy 为例</span><br>      <span class="hljs-attr">env:</span><br>        <span class="hljs-attr">SSH_PRIVATE:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.SSH_PRIVATE</span> <span class="hljs-string">&#125;&#125;</span><br>        <span class="hljs-attr">GIT_NAME:</span> <span class="hljs-string">yourname</span><br>        <span class="hljs-attr">GIT_EMAIL:</span> <span class="hljs-string">your@email.com</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>        <span class="hljs-string">mkdir</span> <span class="hljs-string">-p</span> <span class="hljs-string">~/.ssh/</span><br>        <span class="hljs-string">echo</span> <span class="hljs-string">&quot;$SSH_PRIVATE&quot;</span> <span class="hljs-string">|</span> <span class="hljs-string">tr</span> <span class="hljs-string">-d</span> <span class="hljs-string">&#x27;\r&#x27;</span> <span class="hljs-string">&gt;</span> <span class="hljs-string">~/.ssh/id_rsa</span><br>        <span class="hljs-string">chmod</span> <span class="hljs-number">600</span> <span class="hljs-string">~/.ssh/id_rsa</span><br>        <span class="hljs-string">ssh-keyscan</span> <span class="hljs-string">github.com</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">~/.ssh/known_hosts</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.name</span> <span class="hljs-string">&quot;$GIT_NAME&quot;</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.email</span> <span class="hljs-string">&quot;$GIT_EMAIL&quot;</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">run</span> <span class="hljs-string">hexo</span> <span class="hljs-string">deploy</span><br></code></pre></div></td></tr></table></figure></p>
-<p>只要配置了 hexo deploy 的都可以通过上面这种方式部署。</p>
-
+              <h1 id="简介-GitHub-Actions"><a href="#简介-GitHub-Actions" class="headerlink" title="简介 GitHub Actions"></a>简介 GitHub Actions</h1><p>GitHub Actions 是 GitHub 官方推出的持续集成/部署模块服务（CI / CD），只需一个配置文件即可自动开启服务，而且自带云环境运行。</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">概念</th>
+<th style="text-align:center">解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">workflow</td>
+<td style="text-align:center">持续集成一次运行的过程</td>
+</tr>
+<tr>
+<td style="text-align:center">job</td>
+<td style="text-align:center">一个 workflow 由一个或多个 job 构成</td>
+</tr>
+<tr>
+<td style="text-align:center">step</td>
+<td style="text-align:center">每个 job 由多个 step 构成，一步步完成</td>
+</tr>
+<tr>
+<td style="text-align:center">action</td>
+<td style="text-align:center">每个 step 可以依次执行一个或多个 action</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h1 id="配置-hexo-deploy"><a href="#配置-hexo-deploy" class="headerlink" title="配置 hexo deploy"></a>配置 hexo deploy</h1><p>安装 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-deployer-git">hexo-deployer-git</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ npm install hexo-deployer-git --save<br></code></pre></div></td></tr></table></figure>
+<p>在 Hexo 的 <code>_config.yml</code> 中加入以下代码：</p>
+<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">&lt;repository</span> <span class="hljs-string">url&gt;</span><br>  <span class="hljs-attr">branch:</span> [<span class="hljs-string">branch</span>]<br>  <span class="hljs-attr">message:</span> [<span class="hljs-string">message</span>]<br></code></pre></div></td></tr></table></figure>
+<h1 id="创建仓库"><a href="#创建仓库" class="headerlink" title="创建仓库"></a>创建仓库</h1><p>在GitHub中创建一个代码仓库，随后将网站的源文件提交至该仓库中。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/自动化博客_提交源文件至仓库.png" srcset="/img/loading.gif" lazyload alt="提交源文件"></p>
+<h1 id="配置-SSH-Key"><a href="#配置-SSH-Key" class="headerlink" title="配置 SSH Key"></a>配置 SSH Key</h1><p>打开 Git Bash 命令行窗口，检查是否已有 SSH Key。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ <span class="hljs-built_in">cd</span> ~/.ssh<br></code></pre></div></td></tr></table></figure>
+<p>如果提示没有的话，输入下方代码生成。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ ssh-keygen -t rsa -C <span class="hljs-string">&quot;example@email.com&quot;</span><br></code></pre></div></td></tr></table></figure>
+<p>SSH Key 准备完毕后，首先复制<strong>秘钥</strong>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ clip &lt; ~/.ssh/id_rsa<br></code></pre></div></td></tr></table></figure>
+<p>然后在之前创建的<strong>源文件仓库</strong> <code>Settings&gt;Secrets</code> 中创建一个名为 <code>SSH_PRIVATE</code> 的 Secrets，并将 Value 设置为<strong>秘钥的值</strong>。</p>
+<p>接着复制<strong>公钥</strong>。</p>
+<figure class="highlight bash"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs bash">$ clip &lt; ~/.ssh/id_rsa.pub<br></code></pre></div></td></tr></table></figure>
+<p>在<strong>网站仓库</strong> <code>Settings&gt;Deploy Keys</code> 中添加一个 Deploy Key，名称任意，并将 Key 设置为<strong>公钥的值</strong>。</p>
+<h1 id="创建-workflow"><a href="#创建-workflow" class="headerlink" title="创建 workflow"></a>创建 workflow</h1><p>在博客目录下创建 <code>.github/workflows/xxx.yml</code> 文件，文件名任意。</p>
+<p>文件内容如下<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="https://hexo.fluid-dev.com/posts/actions-deploy/
+">[1]</span></a></sup>，可以根据自己的需要增减步骤。</p>
+<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">name:</span> <span class="hljs-string">Deploy</span>                      <span class="hljs-comment"># Actions 显示的名字，随意设置</span><br><br><span class="hljs-attr">on:</span> [<span class="hljs-string">push</span>]                        <span class="hljs-comment"># 监听到 push 事件后触发</span><br><br><span class="hljs-attr">jobs:</span><br>  <span class="hljs-attr">build:</span><br><br>    <span class="hljs-attr">runs-on:</span> <span class="hljs-string">ubuntu-latest</span><br><br>    <span class="hljs-attr">steps:</span><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Checkout</span>              <span class="hljs-comment"># 拉取当前执行 Actions 仓库的指定分支</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/checkout@v2</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">ref:</span> <span class="hljs-string">master</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Update</span> <span class="hljs-string">Submodule</span>      <span class="hljs-comment"># 如果仓库有 submodule，在这里更新，没有则删掉此步骤</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">submodule</span> <span class="hljs-string">init</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">submodule</span> <span class="hljs-string">update</span> <span class="hljs-string">--remote</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Setup</span> <span class="hljs-string">Node</span>            <span class="hljs-comment"># 安装 Node 环境</span><br>      <span class="hljs-attr">uses:</span> <span class="hljs-string">actions/setup-node@v1</span><br>      <span class="hljs-attr">with:</span><br>        <span class="hljs-attr">node-version:</span> <span class="hljs-string">&quot;10.x&quot;</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Generate</span>         <span class="hljs-comment"># 安装 Hexo 依赖并且生成静态文件</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>        <span class="hljs-string">rm</span> <span class="hljs-string">-f</span> <span class="hljs-string">.yarnclean</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">--frozen-lockfile</span> <span class="hljs-string">--ignore-engines</span> <span class="hljs-string">--ignore-optional</span> <span class="hljs-string">--non-interactive</span> <span class="hljs-string">--silent</span> <span class="hljs-string">--ignore-scripts</span> <span class="hljs-string">--production=false</span><br>        <span class="hljs-string">rm</span> <span class="hljs-string">-rf</span> <span class="hljs-string">./public</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">run</span> <span class="hljs-string">hexo</span> <span class="hljs-string">clean</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">run</span> <span class="hljs-string">hexo</span> <span class="hljs-string">generate</span><br><br>    <span class="hljs-bullet">-</span> <span class="hljs-attr">name:</span> <span class="hljs-string">Hexo</span> <span class="hljs-string">Deploy</span>           <span class="hljs-comment"># 部署步骤，这里以 hexo deploy 为例</span><br>      <span class="hljs-attr">env:</span><br>        <span class="hljs-attr">SSH_PRIVATE:</span> <span class="hljs-string">$&#123;&#123;</span> <span class="hljs-string">secrets.SSH_PRIVATE</span> <span class="hljs-string">&#125;&#125;</span><br>        <span class="hljs-attr">GIT_NAME:</span> <span class="hljs-string">yourname</span>        <span class="hljs-comment"># 在此处填写GitHub的用户名</span><br>        <span class="hljs-attr">GIT_EMAIL:</span> <span class="hljs-string">your@email.com</span> <span class="hljs-comment"># 在此处填写邮箱</span><br>      <span class="hljs-attr">run:</span> <span class="hljs-string">|</span><br>        <span class="hljs-string">mkdir</span> <span class="hljs-string">-p</span> <span class="hljs-string">~/.ssh/</span><br>        <span class="hljs-string">echo</span> <span class="hljs-string">&quot;$SSH_PRIVATE&quot;</span> <span class="hljs-string">|</span> <span class="hljs-string">tr</span> <span class="hljs-string">-d</span> <span class="hljs-string">&#x27;\r&#x27;</span> <span class="hljs-string">&gt;</span> <span class="hljs-string">~/.ssh/id_rsa</span><br>        <span class="hljs-string">chmod</span> <span class="hljs-number">600</span> <span class="hljs-string">~/.ssh/id_rsa</span><br>        <span class="hljs-string">ssh-keyscan</span> <span class="hljs-string">github.com</span> <span class="hljs-string">&gt;&gt;</span> <span class="hljs-string">~/.ssh/known_hosts</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.name</span> <span class="hljs-string">&quot;$GIT_NAME&quot;</span><br>        <span class="hljs-string">git</span> <span class="hljs-string">config</span> <span class="hljs-string">--global</span> <span class="hljs-string">user.email</span> <span class="hljs-string">&quot;$GIT_EMAIL&quot;</span><br>        <span class="hljs-string">yarn</span> <span class="hljs-string">run</span> <span class="hljs-string">hexo</span> <span class="hljs-string">deploy</span><br></code></pre></div></td></tr></table></figure>
+<p>文件中的 <code>GIT_NAME</code> 和 <code>GIT_EMAIL</code> 需要自行修改。<br>至此就已经配置好了。</p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>当我们提交修改后，GitHub就会自动执行配置好的步骤，完成博客的部署。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/github_actions_hexo_自动化部署_运行实例.png" srcset="/img/loading.gif" lazyload alt="自动化流程"></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>在执行 Hexo Deploy 时，可能会出现这样的报错：</p>
+<figure class="highlight txt"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs txt">fatal: could not read Username for &#x27;https://github.com&#x27;: No such device or address<br></code></pre></div></td></tr></table></figure>
+<p>解决方案：修改 hexo deploy 的配置。在 <code>_config.yml</code> 中</p>
+<figure class="highlight yaml"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs yaml"><span class="hljs-attr">deploy:</span><br>  <span class="hljs-attr">type:</span> <span class="hljs-string">git</span><br>  <span class="hljs-attr">repo:</span> <span class="hljs-string">&lt;repository</span> <span class="hljs-string">url&gt;</span> <span class="hljs-comment"># 改为此格式：https://userName:password@github.com/username/project.git</span><br>  <span class="hljs-attr">branch:</span> [<span class="hljs-string">branch</span>]<br>  <span class="hljs-attr">message:</span> [<span class="hljs-string">message</span>]<br></code></pre></div></td></tr></table></figure>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span><a target="_blank" rel="noopener" href="https://hexo.fluid-dev.com/posts/actions-deploy/">https://hexo.fluid-dev.com/posts/actions-deploy/</a>
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
             </div>
             <hr>
             <div>
@@ -315,10 +354,14 @@
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+                <p class="note note-warning">
+                  
+                    本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！
+                  
+                </p>
               
               
-                <div class="post-prevnext row">
+                <div class="post-prevnext">
                   <article class="post-prev col-6">
                     
                     
@@ -332,8 +375,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/78af359a/">
-                        <span class="hidden-mobile">Hexo 与 GitHub Pages 搭建静态博客</span>
+                      <a href="/posts/2140af2c/">
+                        <span class="hidden-mobile">计数原理、排列组合、概率论初步</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -345,15 +388,17 @@
 
             
               <!-- Comments -->
-              <article class="comments" id="comments">
+              <article class="comments" id="comments" lazyload>
+                
+                  
                 
                 
-  <div id="vcomments"></div>
+  <div id="valine"></div>
   <script type="text/javascript">
-    Fluid.utils.waitElementVisible('vcomments', function() {
+    Fluid.utils.loadComments('#valine', function() {
       Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function () {
         new Valine({
-          el: "#vcomments",
+          el: "#valine",
           app_id: "HI2Js1k39RFt8RHuCG8e5VjN-gzGzoHsz",
           app_key: "LcfwljEHCBJDszwBSjQX8Msc",
           placeholder: "说点什么",
@@ -369,9 +414,7 @@
       });
     });
   </script>
-  <noscript>Please enable JavaScript to view the
-    <a target="_blank" href="https://valine.js.org" rel="nofollow noopener noopener">comments powered by Valine.</a>
-  </noscript>
+  <noscript>Please enable JavaScript to view the comments</noscript>
 
 
               </article>
@@ -393,6 +436,12 @@
 </div>
 
 <!-- Custom -->
+
+  <div class="col-lg-7 mx-auto nopadding-x-md">
+    <div class="container custom post-custom mx-auto">
+       <div style="text-align:center;"> <span>如果您愿意请我喝一杯咖啡的话，可以使用微信扫描下方的二维码。</span> <img src="/images/wechatpay.jpg" srcset="/img/loading.gif" lazyload class="rounded mx-auto d-block mt-5" style="width:200px; height:200px;"> </div> 
+    </div>
+  </div>
 
 
     
@@ -432,7 +481,7 @@
 
   <footer class="text-center mt-5 py-3">
   <div class="footer-content">
-    ©2020 By Jin Yuhan
+    <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a> Theme <a target="_blank" rel="noopener" href="https://github.com/fluid-dev/hexo-theme-fluid">Fluid</a><br> ©2020-2021 Shieru 
   </div>
   
 
@@ -441,12 +490,12 @@
   
 </footer>
 
-<!-- SCRIPTS -->
 
+  <!-- SCRIPTS -->
+  
 
 <script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
 <script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
-<script  src="/js/debouncer.js" ></script>
 <script  src="/js/events.js" ></script>
 <script  src="/js/plugins.js" ></script>
 
@@ -454,7 +503,7 @@
 
 
   
-    <script  src="/js/lazyload.js" ></script>
+    <script  src="/js/img-lazyload.js" ></script>
   
 
 
@@ -479,8 +528,6 @@
 
 
 
-  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
-
 
 
 
@@ -501,11 +548,12 @@
   <script>
     (function () {
       var path = "/local-search.xml";
-      var inputArea = document.querySelector("#local-search-input");
-      inputArea.onclick = function () {
+      $('#local-search-input').on('click', function() {
         searchFunc(path, 'local-search-input', 'local-search-result');
-        this.onclick = null
-      }
+      });
+      $('#modalSearch').on('shown.bs.modal', function() {
+        $('#local-search-input').focus();
+      });
     })()
   </script>
 
@@ -527,6 +575,22 @@
 <script  src="/js/boot.js" ></script>
 
 
-
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/mikoto.model.json"},"display":{"position":"left","width":180,"height":360},"mobile":{"show":false},"react":{"opacity":0.8},"log":false});</script></body>
+<!-- hexo injector body_end start -->
+    <div id="arknights-live2d">
+        <audio><source></source></audio>
+    </div>
+    <script src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/js/spine-widget.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/js/spine-skeleton-binary3.5.51.js"></script>
+    <script src="/js/arknights_live2d.js"></script>
+    <script>
+        new ArknightsLive2D({
+            urlPrefix: "https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/live2d/char_1012_skadi2/",
+            style: {"width":"200px","height":"200px","position":"fixed","left":"0","bottom":"0","z-Index":"999"},
+            skin: "default",
+            atlas: "char_1012_skadi2.atlas",
+            skeleton: "char_1012_skadi2.skel",
+            behaviors: {"start":{"animation":"Start","voice":"audios/CN_042.wav.bytes"},"idle":{"animation":"Idle","voice":"audios/CN_010.wav.bytes","maxMinutes":5},"interact":{"animations":[{"name":"Skill_2_Begin","loop":false},{"name":"Skill_2_Loop","loop":true}],"voices":["audios/CN_002.wav.bytes","audios/CN_003.wav.bytes","audios/CN_004.wav.bytes","audios/CN_005.wav.bytes","audios/CN_006.wav.bytes","audios/CN_007.wav.bytes","audios/CN_008.wav.bytes","audios/CN_009.wav.bytes","audios/CN_034.wav.bytes","audios/CN_036.wav.bytes"]}}
+        }).lazyInit();
+    </script>
+    <!-- hexo injector body_end end --></body>
 </html>

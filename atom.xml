@@ -1,83 +1,137 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Jin Yuhan</title>
+  <title>Shieru</title>
   <icon>https://jin-yuhan.github.io/icon.png</icon>
-  <subtitle>Jin Yuhan&#39;s Blog</subtitle>
+  <subtitle>Shieru&#39;s Blog</subtitle>
   <link href="https://jin-yuhan.github.io/atom.xml" rel="self"/>
   
   <link href="https://jin-yuhan.github.io/"/>
-  <updated>2020-12-18T16:16:20.866Z</updated>
+  <updated>2021-05-04T15:59:53.468Z</updated>
   <id>https://jin-yuhan.github.io/</id>
   
   <author>
-    <name>Jin Yuhan</name>
+    <name>Shieru</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>旋转矩阵、欧拉角、四元数</title>
-    <link href="https://jin-yuhan.github.io/posts/8e86a5e4/"/>
-    <id>https://jin-yuhan.github.io/posts/8e86a5e4/</id>
-    <published>2020-12-18T16:14:54.000Z</published>
-    <updated>2020-12-18T16:16:20.866Z</updated>
+    <title>Hexo 添加浊心斯卡蒂 Live2D</title>
+    <link href="https://jin-yuhan.github.io/posts/4eb44f55/"/>
+    <id>https://jin-yuhan.github.io/posts/4eb44f55/</id>
+    <published>2021-05-04T15:11:26.000Z</published>
+    <updated>2021-05-04T15:59:53.468Z</updated>
     
     
-    <summary type="html">本文介绍旋转矩阵、欧拉角和四元数</summary>
-    
-    
-    
-    <category term="数学杂谈" scheme="https://jin-yuhan.github.io/categories/%E6%95%B0%E5%AD%A6%E6%9D%82%E8%B0%88/"/>
-    
-    
-    <category term="旋转矩阵" scheme="https://jin-yuhan.github.io/tags/%E6%97%8B%E8%BD%AC%E7%9F%A9%E9%98%B5/"/>
-    
-    <category term="欧拉角" scheme="https://jin-yuhan.github.io/tags/%E6%AC%A7%E6%8B%89%E8%A7%92/"/>
-    
-    <category term="四元数" scheme="https://jin-yuhan.github.io/tags/%E5%9B%9B%E5%85%83%E6%95%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>TensorFlow 学习笔记（一）</title>
-    <link href="https://jin-yuhan.github.io/posts/a983ec53/"/>
-    <id>https://jin-yuhan.github.io/posts/a983ec53/</id>
-    <published>2020-12-18T14:37:53.000Z</published>
-    <updated>2020-12-18T16:17:25.498Z</updated>
-    
-    
-    <summary type="html">本文主要介绍了 TensorFlow 在 Windows 平台的下载。</summary>
+    <summary type="html">在 Hexo 中添加浊心斯卡蒂的 Live2D 人物。</summary>
     
     
     
-    <category term="人工智能" scheme="https://jin-yuhan.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="网页开发" scheme="https://jin-yuhan.github.io/categories/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="TensorFlow" scheme="https://jin-yuhan.github.io/tags/TensorFlow/"/>
+    <category term="明日方舟" scheme="https://jin-yuhan.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
+    
+    <category term="Spine" scheme="https://jin-yuhan.github.io/tags/Spine/"/>
+    
+    <category term="JavaScript" scheme="https://jin-yuhan.github.io/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
-    <title>TensorFlow 学习笔记（零）</title>
-    <link href="https://jin-yuhan.github.io/posts/463c0d24/"/>
-    <id>https://jin-yuhan.github.io/posts/463c0d24/</id>
-    <published>2020-12-18T14:37:36.000Z</published>
-    <updated>2020-12-18T15:26:31.577Z</updated>
+    <title>解包浊心斯卡蒂 Live2D</title>
+    <link href="https://jin-yuhan.github.io/posts/75871ce8/"/>
+    <id>https://jin-yuhan.github.io/posts/75871ce8/</id>
+    <published>2021-05-03T15:04:14.000Z</published>
+    <updated>2021-05-04T15:59:53.895Z</updated>
     
     
-    <summary type="html">这是「TensorFlow 学习笔记」系列的序言部分。</summary>
+    <summary type="html">从明日方舟中解包浊心斯卡蒂的 Live2D 并在 Unity 中还原。</summary>
     
     
     
-    <category term="人工智能" scheme="https://jin-yuhan.github.io/categories/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
+    <category term="逆向工程" scheme="https://jin-yuhan.github.io/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
     
     
-    <category term="TensorFlow" scheme="https://jin-yuhan.github.io/tags/TensorFlow/"/>
+    <category term="明日方舟" scheme="https://jin-yuhan.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
     
-    <category term="机器学习" scheme="https://jin-yuhan.github.io/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    <category term="Spine" scheme="https://jin-yuhan.github.io/tags/Spine/"/>
     
-    <category term="深度学习" scheme="https://jin-yuhan.github.io/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
+    <category term="Unity" scheme="https://jin-yuhan.github.io/tags/Unity/"/>
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
+    
+    <category term="ShaderLab" scheme="https://jin-yuhan.github.io/tags/ShaderLab/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>C 函数调用约定</title>
+    <link href="https://jin-yuhan.github.io/posts/e361f078/"/>
+    <id>https://jin-yuhan.github.io/posts/e361f078/</id>
+    <published>2021-02-27T15:47:38.000Z</published>
+    <updated>2021-05-04T15:17:15.359Z</updated>
+    
+    
+    <summary type="html">介绍两种常见的 C 函数调用约定：__stdcall / __cdecl。</summary>
+    
+    
+    
+    <category term="编程" scheme="https://jin-yuhan.github.io/categories/%E7%BC%96%E7%A8%8B/"/>
+    
+    
+    <category term="C/C++" scheme="https://jin-yuhan.github.io/tags/C-C/"/>
+    
+    <category term="函数调用约定" scheme="https://jin-yuhan.github.io/tags/%E5%87%BD%E6%95%B0%E8%B0%83%E7%94%A8%E7%BA%A6%E5%AE%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 利用 ctypes 调用 C 库函数</title>
+    <link href="https://jin-yuhan.github.io/posts/1e958f7/"/>
+    <id>https://jin-yuhan.github.io/posts/1e958f7/</id>
+    <published>2021-02-26T15:35:44.000Z</published>
+    <updated>2021-05-04T15:59:53.468Z</updated>
+    
+    
+    <summary type="html">Python 利用 ctypes 调用 C 库函数。</summary>
+    
+    
+    
+    <category term="实用技巧" scheme="https://jin-yuhan.github.io/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/"/>
+    
+    
+    <category term="C/C++" scheme="https://jin-yuhan.github.io/tags/C-C/"/>
+    
+    <category term="Python" scheme="https://jin-yuhan.github.io/tags/Python/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python 从 Arduino 获取 JY61P 及压力传感器数据</title>
+    <link href="https://jin-yuhan.github.io/posts/7a9115b2/"/>
+    <id>https://jin-yuhan.github.io/posts/7a9115b2/</id>
+    <published>2020-12-26T12:46:08.000Z</published>
+    <updated>2021-05-04T15:59:53.450Z</updated>
+    
+    
+    <summary type="html">使用 Python 从串口读取 Arduino 发送的 JY61P 陀螺仪传感器和压力传感器的数据，这其中包含了数据的校验。</summary>
+    
+    
+    
+    <category term="嵌入式开发" scheme="https://jin-yuhan.github.io/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="C/C++" scheme="https://jin-yuhan.github.io/tags/C-C/"/>
+    
+    <category term="Python" scheme="https://jin-yuhan.github.io/tags/Python/"/>
+    
+    <category term="Arduino" scheme="https://jin-yuhan.github.io/tags/Arduino/"/>
+    
+    <category term="JY61P" scheme="https://jin-yuhan.github.io/tags/JY61P/"/>
+    
+    <category term="串口通信" scheme="https://jin-yuhan.github.io/tags/%E4%B8%B2%E5%8F%A3%E9%80%9A%E4%BF%A1/"/>
     
   </entry>
   
@@ -86,7 +140,7 @@
     <link href="https://jin-yuhan.github.io/posts/3d688237/"/>
     <id>https://jin-yuhan.github.io/posts/3d688237/</id>
     <published>2020-12-18T14:36:19.000Z</published>
-    <updated>2020-12-18T15:27:35.114Z</updated>
+    <updated>2021-05-04T15:59:53.468Z</updated>
     
     
     <summary type="html">Arduino IDE 虽然简单易上手，但其编码效率低。VSCode 是一款免费的轻量级编辑器，提供了强大的功能与丰富的插件支持。用 VSCode 替换 Arduino IDE 可以大大提升效率。</summary>
@@ -107,7 +161,7 @@
     <link href="https://jin-yuhan.github.io/posts/13dfd8f4/"/>
     <id>https://jin-yuhan.github.io/posts/13dfd8f4/</id>
     <published>2020-12-18T14:32:58.000Z</published>
-    <updated>2020-12-18T16:06:56.198Z</updated>
+    <updated>2021-05-04T15:59:53.468Z</updated>
     
     
     <summary type="html">借助 GitHub Actions 自动化 Hexo 博客的提交，实现GitHub在线写作。</summary>
@@ -122,42 +176,6 @@
     <category term="GitHub Pages" scheme="https://jin-yuhan.github.io/tags/GitHub-Pages/"/>
     
     <category term="GitHub Actions" scheme="https://jin-yuhan.github.io/tags/GitHub-Actions/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hexo 与 GitHub Pages 搭建静态博客</title>
-    <link href="https://jin-yuhan.github.io/posts/78af359a/"/>
-    <id>https://jin-yuhan.github.io/posts/78af359a/</id>
-    <published>2020-12-18T14:20:27.000Z</published>
-    <updated>2020-12-18T15:39:38.150Z</updated>
-    
-    
-    <summary type="html">本文将介绍如何利用 Hexo 与 GitHub Pages 搭建一个属于自己的静态博客。</summary>
-    
-    
-    
-    <category term="博客搭建" scheme="https://jin-yuhan.github.io/categories/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
-    
-    
-    <category term="Hexo" scheme="https://jin-yuhan.github.io/tags/Hexo/"/>
-    
-    <category term="GitHub Pages" scheme="https://jin-yuhan.github.io/tags/GitHub-Pages/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>写在前面</title>
-    <link href="https://jin-yuhan.github.io/posts/ca8bfdf3/"/>
-    <id>https://jin-yuhan.github.io/posts/ca8bfdf3/</id>
-    <published>2020-12-13T05:26:50.000Z</published>
-    <updated>2020-12-18T16:28:51.961Z</updated>
-    
-    
-    <summary type="html">欢迎来到我的博客！本博客基于 Hexo 主题 Fluid。本篇文章简要介绍了这个博客，申请友链请在这篇文章的评论区留言。</summary>
-    
-    
-    
     
   </entry>
   
@@ -191,7 +209,7 @@
     <link href="https://jin-yuhan.github.io/posts/b6dc2c/"/>
     <id>https://jin-yuhan.github.io/posts/b6dc2c/</id>
     <published>2020-04-19T14:58:39.000Z</published>
-    <updated>2020-12-18T12:20:18.269Z</updated>
+    <updated>2021-05-04T15:59:53.468Z</updated>
     
     
     <summary type="html">使用python实现在樱花动漫上搜索并下载动漫。</summary>
