@@ -134,7 +134,7 @@ ArknightsLive2D.prototype = {
     playVoice: function (voice) {
         if (voice) {
             this.isVoicePlaying = true;
-            this.audioSrc.setAttribute("src", "https://web.hycdn.cn/arknights/official/audio/20210202/1bc6d074f0ad5b1d83a04c111a66c121.mp3");
+            this.audioSrc.setAttribute("src", this.getUrl(voice));
             this.audio.load();
             this.audio.play().then(null, reason => {
                 this.isVoicePlaying = false;
