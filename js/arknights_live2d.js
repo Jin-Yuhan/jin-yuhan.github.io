@@ -1,3 +1,19 @@
+function ArknightsLive2D(config) {
+    this.config = config;
+    this.widget = null;
+
+    this.widgetContainer = document.querySelector(".arknights-spine-widget");
+    this.voiceText = document.createElement("div");
+    this.voicePlayer = new Audio();
+
+    this.triggerEvents = ["mousedown", "touchstart", "scroll"];
+    this.animationQueue = new Array(); // 动画播放队列
+    this.isPlayingVoice = false;
+    this.lastInteractTime = Date.now();
+
+    this.load();
+}
+
 ArknightsLive2D.downloadBinary = function (url, success, error) {
     var request = new XMLHttpRequest();
     request.open("GET", url, true);
@@ -15,35 +31,24 @@ ArknightsLive2D.downloadBinary = function (url, success, error) {
     request.send();
 };
 
-function ArknightsLive2D(config) {
-    this.config = config;
-    this.widget = null;
-    this.widgetContainer = document.getElementById("arknights-live2d");
-    this.audio = this.widgetContainer.querySelector("audio");
-    this.audioSrc = this.widgetContainer.querySelector("audio source");
-    this.animationQueue = new Array(); // 动画播放队列
-    this.triggerEvents = ["mousedown", "touchstart", "scroll"];
-
-    this.isVoicePlaying = false;
-    this.lastInteractTime = Date.now();
-}
-
 ArknightsLive2D.prototype = {
-    preload: function () {
+    load: function () {
         let c = this.config;
 
         ArknightsLive2D.downloadBinary(this.getUrl(c.skeleton), data => {
-            widget = document.createElement("div");
-            for (var prop in c.style) {
-                widget.style.setProperty(prop, c.style[prop]);
+            function setStyle(element, style) {
+                for (var prop in style) {
+                    element.style.setProperty(prop, style[prop]);
+                }
             }
-            this.widgetContainer.style.display = "none"; // 先隐藏
-            this.widgetContainer.appendChild(widget);
+
+            setStyle(this.widgetContainer, c.styles.widget);
+            setStyle(this.voiceText, c.styles.voiceText);
 
             var skeletonJson = new spine.SkeletonJsonConverter(data, 1);
             skeletonJson.convertToJson();
 
-            new spine.SpineWidget(widget, {
+            new spine.SpineWidget(this.widgetContainer, {
                 animation: this.getAnimationList("start")[0].name,
                 skin: c.skin,
                 atlas: this.getUrl(c.atlas),
@@ -61,38 +66,140 @@ ArknightsLive2D.prototype = {
         var init = () => {
             this.triggerEvents.forEach(e => window.removeEventListener(e, init));
             this.triggerEvents.forEach(e => window.addEventListener(e, this.tryPlayingIdleVoice.bind(this)));
-            this.audio.addEventListener("ended", () => this.isVoicePlaying = false);
-            this.widget.canvas.onclick = this.interact.bind(this);
-            this.widget.state.addListener({
-                complete: entry => {
-                    // 如果音频没播放完就一直循环指定的动画，而不是回到闲置动画
-                    if (this.isVoicePlaying && entry.loop) {
-                        this.playAnimation({
-                            name: entry.animation.name,
-                            loop: true
-                        });
-                    } else {
-                        this.playAnimation(this.animationQueue.shift() || this.getAnimationList("idle"));
-                    }
-                }
-            });
 
-            this.widget.state.timeScale = 1; // 开始播放动画
+            this.initVoiceComponents();
+            this.initWidgetActions();
+            this.initDragging();
+
+            this.widget.play(); // 开始播放动画
             this.playVoice(this.getVoice("start"));
             this.widgetContainer.style.display = "block";
         };
 
         this.widget = widget;
-        this.widget.state.timeScale = 0; // 停止动画播放
+        this.widget.pause(); // 停止动画播放
+        this.widgetContainer.style.display = "none"; // 隐藏
         this.triggerEvents.forEach(e => window.addEventListener(e, init));
     },
 
+    initVoiceComponents: function () {
+        this.voiceText.setAttribute("class", "arknights-voice-text");
+        this.widgetContainer.appendChild(this.voiceText); // 保证在canvas之上
+        this.voiceText.style.opacity = 0; // 默认隐藏
+
+        // 自动滚动文字
+        this.voicePlayer.addEventListener("timeupdate", () => {
+            this.voiceText.scrollTo({
+                left: 0,
+                top: this.voiceText.offsetHeight * (this.voicePlayer.currentTime / this.voicePlayer.duration),
+                behavior: "smooth"
+            });
+        });
+
+        this.voicePlayer.addEventListener("ended", () => {
+            this.isPlayingVoice = false;
+            this.voiceText.style.opacity = 0; // 播放完立刻隐藏
+        });
+    },
+
+    initWidgetActions: function () {
+        this.widget.canvas.onclick = this.interact.bind(this);
+        this.widget.state.addListener({
+            complete: entry => {
+                // 如果音频没播放完就一直循环指定的动画，而不是回到闲置动画
+                if (this.isPlayingVoice && entry.loop) {
+                    this.playAllAnimations({
+                        name: entry.animation.name,
+                        loop: true
+                    });
+                } else {
+                    this.playAllAnimations(this.animationQueue.shift() || this.getAnimationList("idle"));
+                }
+            }
+        });
+    },
+
+    initDragging: function () {
+        function getPagePos(event) {
+            var x = document.documentElement.scrollLeft;
+            var y = document.documentElement.scrollTop;
+
+            if (event.targetTouches) {
+                x += event.targetTouches[0].clientX;
+                y += event.targetTouches[0].clientY;
+            } else if (event.clientX && event.clientY) {
+                x += event.clientX;
+                y += event.clientY;
+            }
+
+            return {
+                x: x,
+                y: y
+            };
+        }
+
+        function preventDefault(event) {
+            if (event.cancelable) {
+                event.preventDefault();
+            }
+        }
+
+        var down = event => {
+            var {
+                x,
+                y
+            } = getPagePos(event || window.event);
+
+            this.localX = x - this.widgetContainer.offsetLeft;
+            this.localY = y - this.widgetContainer.offsetTop;
+        };
+
+        var move = event => {
+            var {
+                x,
+                y
+            } = getPagePos(event || window.event);
+
+            var left = x - this.localX;
+            var top = y - this.localY;
+            left = Math.max(0, left);
+            top = Math.max(0, top);
+            left = Math.min(document.body.clientWidth - this.widgetContainer.clientWidth, left);
+            top = Math.min(document.body.clientHeight - this.widgetContainer.clientHeight, top);
+            this.widgetContainer.style.left = left + "px";
+            this.widgetContainer.style.top = top + "px";
+
+            window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty(); // 清除选中文字
+        };
+
+        var passive = {
+            passive: true
+        };
+        var nonPassive = {
+            passive: false
+        };
+
+        this.widgetContainer.addEventListener("mousedown", event => {
+            down(event);
+            document.addEventListener("mousemove", move); // 防止鼠标快速滑出
+        });
+        this.widgetContainer.addEventListener('touchstart', event => {
+            down(event);
+            document.addEventListener("touchmove", preventDefault, nonPassive); // 防止屏幕滚动
+        }, passive)
+
+        this.widgetContainer.addEventListener('touchmove', move, passive)
+
+        document.addEventListener("mouseup", () => document.removeEventListener("mousemove", move));
+        this.widgetContainer.addEventListener('touchend', () => document.removeEventListener("touchmove", preventDefault));
+    },
+
     interact: function () {
-        if (this.isVoicePlaying || this.animationQueue.length > 0 || !this.isIdle()) {
+        if (this.isPlayingVoice || this.animationQueue.length > 0 || !this.isIdle()) {
             console.warn("互动过于频繁！");
         } else {
             this.lastInteractTime = Date.now();
-            this.playAnimation(this.getAnimationList("interact"));
+            this.playAllAnimations(this.getAnimationList("interact"));
             this.playVoice(this.getVoice("interact"));
         }
     },
@@ -115,30 +222,37 @@ ArknightsLive2D.prototype = {
     getVoice: function (behaviorName) {
         var behavior = this.config.behaviors[behaviorName];
         if (behaviorName == "start" || behaviorName == "idle") {
-            return behavior.voice;
+            return {
+                voice: behavior.voice,
+                text: behavior.text
+            };
         }
         return behavior.voices[Math.floor(Math.random() * behavior.voices.length)];
     },
 
-    playAnimation: function (animation) {
-        if (Array.isArray(animation)) {
-            this.playAnimation(animation.shift());
-            animation.forEach(a => this.animationQueue.push(a)); // 加入播放队列
-        } else if (animation) {
+    playAllAnimations: function (animations) {
+        if (Array.isArray(animations)) {
+            this.playAllAnimations(animations.shift());
+            animations.forEach(a => this.animationQueue.push(a)); // 加入播放队列
+        } else if (animations) {
             // this.widget.setAnimation 会先重置人物的姿势，让动画切换不连贯
-            this.widget.state.setAnimation(0, animation.name, animation.loop);
+            this.widget.state.setAnimation(0, animations.name, animations.loop);
         }
     },
 
     playVoice: function (voice) {
         if (voice) {
-            this.isVoicePlaying = true;
-            this.audioSrc.setAttribute("src", this.getUrl(voice));
-            this.audio.load();
-            this.audio.play().then(null, reason => {
-                this.isVoicePlaying = false;
+            this.isPlayingVoice = true;
+            this.voicePlayer.src = this.getUrl(voice.voice);
+            this.voicePlayer.load();
+            this.voicePlayer.play().then(() => {
+                this.voiceText.style.opacity = 1;
+                this.voiceText.innerHTML = voice.text;
+            }, reason => {
+                this.isPlayingVoice = false;
                 console.error(`无法播放音频，因为：${reason}`);
             });
+
         }
     },
 

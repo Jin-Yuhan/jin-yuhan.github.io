@@ -1,0 +1,43 @@
+.arknights-spine-widget {
+    width: 200px;
+    height: 200px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+}
+
+.arknights-voice-text {
+    width: 100%;
+    height: 60px;
+    position: absolute;
+    margin-top: -70px;
+    padding: 5px 10px;
+    color: #fff;
+    background-color: #14151685;
+    box-shadow: 0 3px 15px 2px #141516;
+    font-size: xx-small;
+    text-align: left;
+    text-overflow: ellipsis;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    transition: opacity 300ms ease-in-out, height 0.5s ease-in-out;
+}
+
+.arknights-voice-text::before {
+    content: 'VOICE TEXT';
+    display: block;
+    color: #37b2ff;
+    font-weight: bold;
+}
+
+/* 隐藏滚动条，文字会根据音频进度自动滚动 */
+
+.arknights-voice-text {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+}
+
+.arknights-voice-text::-webkit-scrollbar {
+    display: none; /* Chrome Safari */
+}
