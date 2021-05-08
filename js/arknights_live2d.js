@@ -97,8 +97,9 @@ ArknightsLive2D.prototype = {
         });
 
         this.voicePlayer.addEventListener("ended", () => {
-            this.isPlayingVoice = false;
             this.voiceText.style.opacity = 0; // 播放完立刻隐藏
+            this.voiceText.scrollTo(0, 0); // 立刻滑动至最上方
+            this.isPlayingVoice = false;
         });
     },
 
