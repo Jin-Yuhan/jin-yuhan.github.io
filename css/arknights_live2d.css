@@ -31,7 +31,7 @@
     font-weight: bold;
 }
 
-/* 隐藏滚动条，文字会根据音频进度自动滚动 */
+/* hide the scroll bar */
 
 .arknights-voice-text {
     scrollbar-width: none; /* Firefox */

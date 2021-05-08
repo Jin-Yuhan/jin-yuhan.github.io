@@ -10,6 +10,8 @@ function ArknightsLive2D(config) {
     this.animationQueue = new Array(); // 动画播放队列
     this.isPlayingVoice = false;
     this.lastInteractTime = Date.now();
+    this.localX = 0;
+    this.localY = 0;
 
     this.load();
 }
@@ -98,7 +100,6 @@ ArknightsLive2D.prototype = {
 
         this.voicePlayer.addEventListener("ended", () => {
             this.voiceText.style.opacity = 0; // 播放完立刻隐藏
-            this.voiceText.scrollTo(0, 0); // 立刻滑动至最上方
             this.isPlayingVoice = false;
         });
     },
@@ -145,11 +146,21 @@ ArknightsLive2D.prototype = {
             }
         }
 
+        var setWidgetPos = (left, top) => {
+            left = Math.max(0, left);
+            top = Math.max(0, top);
+            left = Math.min(document.body.clientWidth - this.widgetContainer.clientWidth, left);
+            top = Math.min(document.body.clientHeight - this.widgetContainer.clientHeight, top);
+
+            this.widgetContainer.style.left = left + "px";
+            this.widgetContainer.style.top = top + "px";
+        };
+
         var down = event => {
             var {
                 x,
                 y
-            } = getPagePos(event || window.event);
+            } = getPagePos(event);
 
             this.localX = x - this.widgetContainer.offsetLeft;
             this.localY = y - this.widgetContainer.offsetTop;
@@ -159,17 +170,9 @@ ArknightsLive2D.prototype = {
             var {
                 x,
                 y
-            } = getPagePos(event || window.event);
+            } = getPagePos(event);
 
-            var left = x - this.localX;
-            var top = y - this.localY;
-            left = Math.max(0, left);
-            top = Math.max(0, top);
-            left = Math.min(document.body.clientWidth - this.widgetContainer.clientWidth, left);
-            top = Math.min(document.body.clientHeight - this.widgetContainer.clientHeight, top);
-            this.widgetContainer.style.left = left + "px";
-            this.widgetContainer.style.top = top + "px";
-
+            setWidgetPos(x - this.localX, y - this.localY);
             window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty(); // 清除选中文字
         };
 
@@ -193,6 +196,16 @@ ArknightsLive2D.prototype = {
 
         document.addEventListener("mouseup", () => document.removeEventListener("mousemove", move));
         this.widgetContainer.addEventListener('touchend', () => document.removeEventListener("touchmove", preventDefault));
+
+        window.addEventListener("resize", () => {
+            let style = this.widgetContainer.style;
+
+            if (style.left && style.top) {
+                var left = Number.parseInt(style.left.substring(0, style.left.length - 2));
+                var top = Number.parseInt(style.top.substring(0, style.top.length - 2));
+                setWidgetPos(left, top); // 防止窗口大小变化时人物消失
+            }
+        });
     },
 
     interact: function () {
@@ -247,8 +260,9 @@ ArknightsLive2D.prototype = {
             this.voicePlayer.src = this.getUrl(voice.voice);
             this.voicePlayer.load();
             this.voicePlayer.play().then(() => {
-                this.voiceText.style.opacity = 1;
                 this.voiceText.innerHTML = voice.text;
+                this.voiceText.scrollTo(0, 0); // 立刻滑动至最上方
+                this.voiceText.style.opacity = 1;
             }, reason => {
                 this.isPlayingVoice = false;
                 console.error(`无法播放音频，因为：${reason}`);
