@@ -6,7 +6,7 @@
   <link href="https://jin-yuhan.github.io/atom.xml" rel="self"/>
   
   <link href="https://jin-yuhan.github.io/"/>
-  <updated>2021-05-04T15:59:53.468Z</updated>
+  <updated>2021-07-01T14:54:35.830Z</updated>
   <id>https://jin-yuhan.github.io/</id>
   
   <author>
@@ -17,14 +17,14 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hexo 添加浊心斯卡蒂 Live2D</title>
+    <title>【Hexo】 添加明日方舟干员 小人 Spine</title>
     <link href="https://jin-yuhan.github.io/posts/4eb44f55/"/>
     <id>https://jin-yuhan.github.io/posts/4eb44f55/</id>
     <published>2021-05-04T15:11:26.000Z</published>
-    <updated>2021-05-04T15:59:53.468Z</updated>
+    <updated>2021-07-01T14:54:35.830Z</updated>
     
     
-    <summary type="html">在 Hexo 中添加浊心斯卡蒂的 Live2D 人物。</summary>
+    <summary type="html">本文以浊心斯卡蒂为例，在网页中添加她的小人 Spine，并实现交互功能。</summary>
     
     
     
@@ -36,33 +36,6 @@
     <category term="Spine" scheme="https://jin-yuhan.github.io/tags/Spine/"/>
     
     <category term="JavaScript" scheme="https://jin-yuhan.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>解包浊心斯卡蒂 Live2D</title>
-    <link href="https://jin-yuhan.github.io/posts/75871ce8/"/>
-    <id>https://jin-yuhan.github.io/posts/75871ce8/</id>
-    <published>2021-05-03T15:04:14.000Z</published>
-    <updated>2021-05-04T15:59:53.895Z</updated>
-    
-    
-    <summary type="html">从明日方舟中解包浊心斯卡蒂的 Live2D 并在 Unity 中还原。</summary>
-    
-    
-    
-    <category term="逆向工程" scheme="https://jin-yuhan.github.io/categories/%E9%80%86%E5%90%91%E5%B7%A5%E7%A8%8B/"/>
-    
-    
-    <category term="明日方舟" scheme="https://jin-yuhan.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
-    
-    <category term="Spine" scheme="https://jin-yuhan.github.io/tags/Spine/"/>
-    
-    <category term="Unity" scheme="https://jin-yuhan.github.io/tags/Unity/"/>
-    
-    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
-    
-    <category term="ShaderLab" scheme="https://jin-yuhan.github.io/tags/ShaderLab/"/>
     
   </entry>
   
@@ -113,7 +86,7 @@
     <link href="https://jin-yuhan.github.io/posts/7a9115b2/"/>
     <id>https://jin-yuhan.github.io/posts/7a9115b2/</id>
     <published>2020-12-26T12:46:08.000Z</published>
-    <updated>2021-05-04T15:59:53.450Z</updated>
+    <updated>2021-07-01T16:25:48.595Z</updated>
     
     
     <summary type="html">使用 Python 从串口读取 Arduino 发送的 JY61P 陀螺仪传感器和压力传感器的数据，这其中包含了数据的校验。</summary>
