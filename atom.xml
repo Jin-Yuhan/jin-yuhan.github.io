@@ -6,7 +6,7 @@
   <link href="https://jin-yuhan.github.io/atom.xml" rel="self"/>
   
   <link href="https://jin-yuhan.github.io/"/>
-  <updated>2021-07-01T14:54:35.830Z</updated>
+  <updated>2021-07-09T16:09:30.337Z</updated>
   <id>https://jin-yuhan.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在 Unity 中还原浊心斯卡蒂 Live2D</title>
+    <link href="https://jin-yuhan.github.io/posts/75871ce8/"/>
+    <id>https://jin-yuhan.github.io/posts/75871ce8/</id>
+    <published>2021-07-09T16:00:17.000Z</published>
+    <updated>2021-07-09T16:09:30.337Z</updated>
+    
+    
+    <summary type="html">temp</summary>
+    
+    
+    
+    <category term="游戏开发" scheme="https://jin-yuhan.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Unity" scheme="https://jin-yuhan.github.io/tags/Unity/"/>
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
+    
+    <category term="ShaderLab" scheme="https://jin-yuhan.github.io/tags/ShaderLab/"/>
+    
+    <category term="Spine" scheme="https://jin-yuhan.github.io/tags/Spine/"/>
+    
+    <category term="明日方舟" scheme="https://jin-yuhan.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
+    
+  </entry>
   
   <entry>
     <title>【Hexo】 添加明日方舟干员 小人 Spine</title>
@@ -31,9 +58,9 @@
     <category term="网页开发" scheme="https://jin-yuhan.github.io/categories/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/"/>
     
     
-    <category term="明日方舟" scheme="https://jin-yuhan.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
-    
     <category term="Spine" scheme="https://jin-yuhan.github.io/tags/Spine/"/>
+    
+    <category term="明日方舟" scheme="https://jin-yuhan.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
     
     <category term="JavaScript" scheme="https://jin-yuhan.github.io/tags/JavaScript/"/>
     
