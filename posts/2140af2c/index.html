@@ -465,18 +465,18 @@ P(AB)=P(A)\cdot P(B)</script><p>那么称事件$A$与事件$B$是统计独立的
                   
                 
                 
-  <div id="valine"></div>
+  <div id="twikoo"></div>
   <script type="text/javascript">
-    Fluid.utils.loadComments('#valine', function() {
-      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', function() {
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1.4.1/dist/twikoo.all.min.js', function() {
         var options = Object.assign(
-          {"appId":"HI2Js1k39RFt8RHuCG8e5VjN-gzGzoHsz","appKey":"LcfwljEHCBJDszwBSjQX8Msc","placeholder":"说点什么","path":"window.location.pathname","avatar":"retro","meta":["nick","mail","link"],"pageSize":10,"lang":"zh-CN","highlight":true,"recordIP":false,"serverURLs":"","emojiCDN":null,"emojiMaps":null,"enableQQ":false,"requiredFields":[]},
+          {"envId":"https://twikoo-jin-yuhan.vercel.app/","region":"ap-shanghai","path":"window.location.pathname"},
           {
-            el: "#valine",
-            path: window.location.pathname
+            el: '#twikoo',
+            path: 'window.location.pathname'
           }
         )
-        new Valine(options);
+        twikoo.init(options)
       });
     });
   </script>
