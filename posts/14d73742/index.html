@@ -14,11 +14,11 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#f2f2f2">
-  <meta name="description" content="Arduino IDE 虽然简单易上手，但其编码效率低。VSCode 是一款免费的轻量级编辑器，提供了强大的功能与丰富的插件支持。用 VSCode 替换 Arduino IDE 可以大大提升效率。">
+  <meta name="description" content="todo">
   <meta name="author" content="Shieru">
   <meta name="keywords" content="">
   
-  <title>使用 VSCode 开发 Arduino - Shieru</title>
+  <title>借助 Unity Job System 实现视锥体剔除 - Shieru</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" />
 
@@ -195,12 +195,12 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/covers/7e8dc56658c80b9140a7155eacb805e.jpg') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/covers/c6b0ca6949a52385ea0df697dad858c.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="使用 VSCode 开发 Arduino">
+            <span class="h2" id="subtitle" title="借助 Unity Job System 实现视锥体剔除">
               
             </span>
 
@@ -215,8 +215,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2020-12-18 22:36" pubdate>
-        2020年12月18日 晚上
+      <time datetime="2021-07-14 21:57" pubdate>
+        2021年7月14日 晚上
       </time>
     </span>
   
@@ -227,7 +227,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      457 字
+      158 字
     </span>
   
 
@@ -237,7 +237,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      5
+      3
        分钟
     </span>
   
@@ -267,38 +267,10 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">使用 VSCode 开发 Arduino</h1>
+            <h1 style="display: none">借助 Unity Job System 实现视锥体剔除</h1>
             
             <div class="markdown-body">
-              <h1 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h1><p>VSCode 全称 Visual Studio Code，是微软推出的一款轻量级代码编辑器，免费、开源而且功能强大。它几乎支持所有主流的程序语言，支持插件扩展，并针对网页开发和云端应用开发做了优化。软件跨平台支持 Windows、Mac OS X 以及 Linux。</p>
-<p>VSCode 可以在其<a target="_blank" rel="noopener" href="https://code.visualstudio.com/">官网</a>下载。</p>
-<h1 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h1><p>在商店中下载 <code>Arduino</code> 插件，注意要下载发布者为 Microsoft 的插件。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/vscode_arduino.png" srcset="/img/loading.gif" lazyload alt="下载 Arduino 插件"></p>
-<p>点击 <code>文件&gt;首选项&gt;设置</code>，打开 VSCode 配置文件，添加 Arduino IDE 路径配置，如：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/vscode_arduino插件配置.png" srcset="/img/loading.gif" lazyload alt="Arduino IDE 路径配置"></p>
-<p><strong>此路径为 Arduino 文件夹的路径</strong>，下面这种路径配置是错误的：</p>
-<figure class="highlight json"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs json">&#123;<br>  <span class="hljs-attr">&quot;arduino.path&quot;</span>: <span class="hljs-string">&quot;D:\\Arduino\\arduino.exe&quot;</span><br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p>接下来安装 <code>C/C++</code> 插件，这个插件可以不做配置。</p>
-<h1 id="Arduino-设置"><a href="#Arduino-设置" class="headerlink" title="Arduino 设置"></a>Arduino 设置</h1><p>点击 <code>文件&gt;首选项&gt;设置</code>：</p>
-<ol>
-<li><p>在 Arduino IDE 的安装目录下新建一个文件夹，并将 <code>项目文件夹位置</code> 设置为这个文件夹的路径。这样，我们通过 Arduino IDE 下载的第三方库文件都会放在这个文件夹，方便我们管理。</p>
-</li>
-<li><p>修改 <code>编辑器语言</code> 为 <code>English</code>。由于大部分人的电脑系统是中文的，如果不设置为英文，VSCode 打印出来的信息会乱码。</p>
-</li>
-<li><p>勾选 <code>使用外部编辑器</code>。这样就不可以在 Arduino IDE 中修改代码了。</p>
-</li>
-</ol>
-<h1 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h1><p>新建一个 Arduino 源文件 <code>test.ino</code>，输入如下内容：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">setup</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>  pinMode(<span class="hljs-number">13</span>, OUTPUT);<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">loop</span><span class="hljs-params">()</span> </span><br><span class="hljs-function"></span>&#123;<br>  digitalWrite(<span class="hljs-number">13</span>, HIGH);<br>  delay(<span class="hljs-number">500</span>);<br>  digitalWrite(<span class="hljs-number">13</span>, LOW);<br>  delay(<span class="hljs-number">500</span>);<br>&#125;<br></code></pre></div></td></tr></table></figure>
-<p>在 VSCode 窗口的右下方，设置开发板类型、端口号等配置：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/vscode_arduino插件窗口下方配置.png" srcset="/img/loading.gif" lazyload alt="配置"></p>
-<p>然后可以点击右上角的按钮进行编译和上传:</p>
-<p><img src="https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/vscode_arduino插件窗口上方按钮.png" srcset="/img/loading.gif" lazyload alt="上传"></p>
-<p>也可以使用下面的快捷键：</p>
-<ul>
-<li><code>Ctrl+Alt+U</code>：编译并上传</li>
-<li><code>Ctrl+Alt+R</code>：进行编译验证</li>
-</ul>
+              <h1 id="数学原理"><a href="#数学原理" class="headerlink" title="数学原理"></a>数学原理</h1><h1 id="代码实现"><a href="#代码实现" class="headerlink" title="代码实现"></a>代码实现</h1><figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#"><span class="hljs-keyword">using</span> Unity.Burst;<br><span class="hljs-keyword">using</span> Unity.Collections;<br><span class="hljs-keyword">using</span> Unity.Jobs;<br><span class="hljs-keyword">using</span> Unity.Mathematics;<br><span class="hljs-keyword">using</span> <span class="hljs-keyword">static</span> Unity.Mathematics.math;<br><br>[<span class="hljs-meta">BurstCompile</span>]<br><span class="hljs-keyword">public</span> <span class="hljs-keyword">struct</span> FrustumCullingJob : IJobParallelForFilter<br>&#123;<br>    [<span class="hljs-meta">ReadOnly</span>] <span class="hljs-keyword">public</span> NativeArray&lt;float4&gt; Planes;<br>    [<span class="hljs-meta">ReadOnly</span>] <span class="hljs-keyword">public</span> NativeArray&lt;int3&gt; Sections;<br>    [<span class="hljs-meta">ReadOnly</span>] <span class="hljs-keyword">public</span> int3 SectionOffset;<br>    [<span class="hljs-meta">ReadOnly</span>] <span class="hljs-keyword">public</span> int3 SectionSize;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">bool</span> <span class="hljs-title">Execute</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> index</span>)</span><br><span class="hljs-function"></span>    &#123;<br>        float3 aabbMin = Sections[index] + SectionOffset;<br>        float3 aabbMax = aabbMin + SectionSize;<br><br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">6</span>; i++)<br>        &#123;<br>            float4 plane = Planes[i];<br>            float4 min = float4(aabbMin, <span class="hljs-number">1</span>);<br>            float4 max = float4(aabbMax, <span class="hljs-number">1</span>);<br><br>            <span class="hljs-keyword">if</span> (plane.x &gt; <span class="hljs-number">0</span>)<br>            &#123;<br>                min.x = aabbMax.x;<br>                max.x = aabbMin.x;<br>            &#125;<br><br>            <span class="hljs-keyword">if</span> (plane.y &gt; <span class="hljs-number">0</span>)<br>            &#123;<br>                min.y = aabbMax.y;<br>                max.y = aabbMin.y;<br>            &#125;<br><br>            <span class="hljs-keyword">if</span> (plane.z &gt; <span class="hljs-number">0</span>)<br>            &#123;<br>                min.z = aabbMax.z;<br>                max.z = aabbMin.z;<br>            &#125;<br><br>            <span class="hljs-keyword">if</span> (dot(plane, min) &lt;= <span class="hljs-number">0</span> &amp;&amp; dot(plane, max) &lt;= <span class="hljs-number">0</span>)<br>            &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 
             </div>
             <hr>
@@ -308,7 +280,7 @@
                   <div class="post-meta mr-3">
                     <i class="iconfont icon-category"></i>
                     
-                      <a class="hover-with-bg" href="/categories/%E5%AE%9E%E7%94%A8%E6%8A%80%E5%B7%A7/">实用技巧</a>
+                      <a class="hover-with-bg" href="/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/">游戏开发</a>
                     
                   </div>
                 
@@ -316,9 +288,13 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
-                      <a class="hover-with-bg" href="/tags/Arduino/">Arduino</a>
+                      <a class="hover-with-bg" href="/tags/Unity/">Unity</a>
                     
-                      <a class="hover-with-bg" href="/tags/VSCode/">VSCode</a>
+                      <a class="hover-with-bg" href="/tags/C/">C#</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Job-System/">Job System</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Burst-Compiler/">Burst Compiler</a>
                     
                   </div>
                 
@@ -335,18 +311,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/7a9115b2/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Python 从 Arduino 获取 JY61P 及压力传感器数据</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/13dfd8f4/">
-                        <span class="hidden-mobile">利用 GitHub Actions 自动部署 Hexo 博客至 GitHub Pages</span>
+                      <a href="/posts/1ff19c03/">
+                        <span class="hidden-mobile">借助 Unity Job System 计算视锥体平面</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

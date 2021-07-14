@@ -1,7 +1,7 @@
 
 
 <!DOCTYPE html>
-<html lang="zh-CN" data-default-color-scheme=&#34;dark&#34;>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -14,7 +14,7 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#f2f2f2">
-  <meta name="description" content="temp">
+  <meta name="description" content="todo">
   <meta name="author" content="Shieru">
   <meta name="keywords" content="">
   
@@ -195,7 +195,7 @@
 </nav>
 
     <div class="banner" id="banner" parallax=true
-         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/7ca24fc6f5fbaeeff6c5acb12de088ad4fbdf82d.jpg') no-repeat center center;
+         style="background: url('https://cdn.jsdelivr.net/gh/Jin-Yuhan/WebAssetStorage@latest/img/covers/764ae14db58b629affec3d026d9f33c.png') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
@@ -227,7 +227,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      650 字
+      660 字
     </span>
   
 
@@ -270,7 +270,8 @@
             <h1 style="display: none">在 Unity 中还原浊心斯卡蒂 Live2D</h1>
             
             <div class="markdown-body">
-              <p><code>Spine</code> 在导入后会报一系列错误……</p>
+              <p>提示：正在找时间补全中…</p>
+<p><code>Spine</code> 在导入后会报一系列错误……</p>
 <p>需要在 <code>/Spine/spine-csharp/AnimationState.cs</code> 中做一些修改，如下所示：</p>
 <figure class="highlight c#"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs c#"><span class="hljs-comment"><span class="hljs-doctag">///</span> <span class="hljs-doctag">&lt;summary&gt;</span>From last to first mixingFrom entries, sets timelinesFirst to true on last, calls checkTimelineUsage on rest.<span class="hljs-doctag">&lt;/summary&gt;</span></span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">void</span> <span class="hljs-title">SetTimelinesFirst</span> (<span class="hljs-params">TrackEntry entry</span>)</span> &#123;<br>    <span class="hljs-keyword">if</span> (entry.mixingFrom != <span class="hljs-literal">null</span>) &#123;<br>        SetTimelinesFirst(entry.mixingFrom);<br>        CheckTimelinesUsage(entry, entry.timelinesFirst);<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">var</span> propertyIDs = <span class="hljs-keyword">this</span>.propertyIDs;<br>    <span class="hljs-keyword">var</span> timelines = entry.animation.timelines;<br>    <span class="hljs-built_in">int</span> n = timelines.Count;<br>    entry.timelinesFirst.EnsureCapacity(n); <span class="hljs-comment">// entry.timelinesFirst.setSize(n);</span><br>    <span class="hljs-keyword">var</span> usage = entry.timelinesFirst.Items;<br>    <span class="hljs-keyword">var</span> timelinesItems = timelines.Items;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>        propertyIDs.Add(timelinesItems[i].PropertyId);<br>        usage[i] = <span class="hljs-literal">true</span>; <span class="hljs-comment">// &lt;- 把这个 true 改成 false 即可</span><br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
 <figure class="highlight cpp"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs cpp">Shader <span class="hljs-string">&quot;Unlit/AlphaSplit&quot;</span><br>&#123;<br>    Properties<br>    &#123;<br>        [NoScaleOffset] _MainTex (<span class="hljs-string">&quot;Texture(Main)&quot;</span>, <span class="hljs-number">2</span>D) = <span class="hljs-string">&quot;white&quot;</span> &#123;&#125;<br>        [NoScaleOffset] _AlphaTex (<span class="hljs-string">&quot;Texture(Alpha)&quot;</span>, <span class="hljs-number">2</span>D) = <span class="hljs-string">&quot;white&quot;</span> &#123;&#125;<br>        _Color(<span class="hljs-string">&quot;Color&quot;</span>, Color) = (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>)<br>    &#125;<br>    SubShader<br>    &#123;<br>        Tags &#123; <span class="hljs-string">&quot;Queue&quot;</span>=<span class="hljs-string">&quot;Transparent&quot;</span> <span class="hljs-string">&quot;IgnoreProjector&quot;</span>=<span class="hljs-string">&quot;True&quot;</span> <span class="hljs-string">&quot;RenderType&quot;</span>=<span class="hljs-string">&quot;Transparent&quot;</span> &#125;<br>        LOD <span class="hljs-number">100</span><br><br>		Fog &#123; Mode Off &#125;<br>		Cull Off<br>		ZWrite Off<br>		Blend One OneMinusSrcAlpha<br>		Lighting Off<br><br>        Pass<br>        &#123;<br>            CGPROGRAM<br>            <span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> vertex vert</span><br>            <span class="hljs-meta">#<span class="hljs-meta-keyword">pragma</span> fragment frag</span><br><br>            <span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&quot;UnityCG.cginc&quot;</span></span><br><br>            struct appdata<br>            &#123;<br>                float4 vertex : POSITION;<br>                float2 uv : TEXCOORD0;<br>                fixed4 color : COLOR;<br>            &#125;;<br><br>            <span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">v2f</span></span><br><span class="hljs-class">            &#123;</span><br>                float4 vertex : SV_POSITION;<br>                float2 uv : TEXCOORD0;<br>                fixed4 color : TEXCOORD1;<br>            &#125;;<br><br>            sampler2D _MainTex;<br>            sampler2D _AlphaTex;<br>            fixed4 _Color;<br><br>            <span class="hljs-function">v2f <span class="hljs-title">vert</span> <span class="hljs-params">(appdata v)</span></span><br><span class="hljs-function">            </span>&#123;<br>                v2f o;<br>                o.vertex = UnityObjectToClipPos(v.vertex);<br>                o.uv = v.uv;<br>                o.color = v.color;<br>                <span class="hljs-keyword">return</span> o;<br>            &#125;<br><br>            <span class="hljs-function">fixed4 <span class="hljs-title">frag</span> <span class="hljs-params">(v2f i)</span> : SV_Target</span><br><span class="hljs-function">            </span>&#123;<br>                fixed4 color = tex2D(_MainTex, i.uv);<br>                color.a = tex2D(_AlphaTex, i.uv).r;<br>                <span class="hljs-keyword">return</span> color * _Color * i.color;<br>            &#125;<br>            ENDCG<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
@@ -316,12 +317,18 @@
                   <article class="post-prev col-6">
                     
                     
+                      <a href="/posts/1ff19c03/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">借助 Unity Job System 计算视锥体平面</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/4eb44f55/">
-                        <span class="hidden-mobile">【Hexo】 添加明日方舟干员 小人 Spine</span>
+                      <a href="/posts/e361f078/">
+                        <span class="hidden-mobile">C 函数调用约定</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

@@ -6,7 +6,7 @@
   <link href="https://jin-yuhan.github.io/atom.xml" rel="self"/>
   
   <link href="https://jin-yuhan.github.io/"/>
-  <updated>2021-07-09T16:09:30.337Z</updated>
+  <updated>2021-07-14T14:40:40.410Z</updated>
   <id>https://jin-yuhan.github.io/</id>
   
   <author>
@@ -17,14 +17,64 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>借助 Unity Job System 实现视锥体剔除</title>
+    <link href="https://jin-yuhan.github.io/posts/14d73742/"/>
+    <id>https://jin-yuhan.github.io/posts/14d73742/</id>
+    <published>2021-07-14T13:57:13.000Z</published>
+    <updated>2021-07-14T14:40:40.410Z</updated>
+    
+    
+    <summary type="html">todo</summary>
+    
+    
+    
+    <category term="游戏开发" scheme="https://jin-yuhan.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Unity" scheme="https://jin-yuhan.github.io/tags/Unity/"/>
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
+    
+    <category term="Job System" scheme="https://jin-yuhan.github.io/tags/Job-System/"/>
+    
+    <category term="Burst Compiler" scheme="https://jin-yuhan.github.io/tags/Burst-Compiler/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>借助 Unity Job System 计算视锥体平面</title>
+    <link href="https://jin-yuhan.github.io/posts/1ff19c03/"/>
+    <id>https://jin-yuhan.github.io/posts/1ff19c03/</id>
+    <published>2021-07-14T13:55:34.000Z</published>
+    <updated>2021-07-14T14:40:31.022Z</updated>
+    
+    
+    <summary type="html">todo</summary>
+    
+    
+    
+    <category term="游戏开发" scheme="https://jin-yuhan.github.io/categories/%E6%B8%B8%E6%88%8F%E5%BC%80%E5%8F%91/"/>
+    
+    
+    <category term="Unity" scheme="https://jin-yuhan.github.io/tags/Unity/"/>
+    
+    <category term="C#" scheme="https://jin-yuhan.github.io/tags/C/"/>
+    
+    <category term="Job System" scheme="https://jin-yuhan.github.io/tags/Job-System/"/>
+    
+    <category term="Burst Compiler" scheme="https://jin-yuhan.github.io/tags/Burst-Compiler/"/>
+    
+  </entry>
+  
+  <entry>
     <title>在 Unity 中还原浊心斯卡蒂 Live2D</title>
     <link href="https://jin-yuhan.github.io/posts/75871ce8/"/>
     <id>https://jin-yuhan.github.io/posts/75871ce8/</id>
     <published>2021-07-09T16:00:17.000Z</published>
-    <updated>2021-07-09T16:09:30.337Z</updated>
+    <updated>2021-07-14T14:57:28.300Z</updated>
     
     
-    <summary type="html">temp</summary>
+    <summary type="html">todo</summary>
     
     
     
@@ -44,34 +94,11 @@
   </entry>
   
   <entry>
-    <title>【Hexo】 添加明日方舟干员 小人 Spine</title>
-    <link href="https://jin-yuhan.github.io/posts/4eb44f55/"/>
-    <id>https://jin-yuhan.github.io/posts/4eb44f55/</id>
-    <published>2021-05-04T15:11:26.000Z</published>
-    <updated>2021-07-01T14:54:35.830Z</updated>
-    
-    
-    <summary type="html">本文以浊心斯卡蒂为例，在网页中添加她的小人 Spine，并实现交互功能。</summary>
-    
-    
-    
-    <category term="网页开发" scheme="https://jin-yuhan.github.io/categories/%E7%BD%91%E9%A1%B5%E5%BC%80%E5%8F%91/"/>
-    
-    
-    <category term="Spine" scheme="https://jin-yuhan.github.io/tags/Spine/"/>
-    
-    <category term="明日方舟" scheme="https://jin-yuhan.github.io/tags/%E6%98%8E%E6%97%A5%E6%96%B9%E8%88%9F/"/>
-    
-    <category term="JavaScript" scheme="https://jin-yuhan.github.io/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C 函数调用约定</title>
     <link href="https://jin-yuhan.github.io/posts/e361f078/"/>
     <id>https://jin-yuhan.github.io/posts/e361f078/</id>
     <published>2021-02-27T15:47:38.000Z</published>
-    <updated>2021-05-04T15:17:15.359Z</updated>
+    <updated>2021-07-14T14:41:00.712Z</updated>
     
     
     <summary type="html">介绍两种常见的 C 函数调用约定：__stdcall / __cdecl。</summary>
@@ -140,7 +167,7 @@
     <link href="https://jin-yuhan.github.io/posts/3d688237/"/>
     <id>https://jin-yuhan.github.io/posts/3d688237/</id>
     <published>2020-12-18T14:36:19.000Z</published>
-    <updated>2021-05-04T15:59:53.468Z</updated>
+    <updated>2021-07-14T14:41:08.723Z</updated>
     
     
     <summary type="html">Arduino IDE 虽然简单易上手，但其编码效率低。VSCode 是一款免费的轻量级编辑器，提供了强大的功能与丰富的插件支持。用 VSCode 替换 Arduino IDE 可以大大提升效率。</summary>
@@ -184,7 +211,7 @@
     <link href="https://jin-yuhan.github.io/posts/2140af2c/"/>
     <id>https://jin-yuhan.github.io/posts/2140af2c/</id>
     <published>2020-07-03T13:41:05.000Z</published>
-    <updated>2020-12-18T11:54:09.046Z</updated>
+    <updated>2021-07-14T14:41:15.657Z</updated>
     
     
     <summary type="html">简单整理了计数原理、排列组合、概率论初步三章内容的概念与公式。适用于高考数学的复习。</summary>
@@ -209,10 +236,10 @@
     <link href="https://jin-yuhan.github.io/posts/b6dc2c/"/>
     <id>https://jin-yuhan.github.io/posts/b6dc2c/</id>
     <published>2020-04-19T14:58:39.000Z</published>
-    <updated>2021-05-04T15:59:53.468Z</updated>
+    <updated>2021-07-14T14:09:25.634Z</updated>
     
     
-    <summary type="html">使用python实现在樱花动漫上搜索并下载动漫。</summary>
+    <summary type="html">使用 Python 实现在樱花动漫上搜索并下载动漫。</summary>
     
     
     
@@ -223,6 +250,8 @@
     
     <category term="网页爬虫" scheme="https://jin-yuhan.github.io/tags/%E7%BD%91%E9%A1%B5%E7%88%AC%E8%99%AB/"/>
     
+    <category term="动漫" scheme="https://jin-yuhan.github.io/tags/%E5%8A%A8%E6%BC%AB/"/>
+    
   </entry>
   
   <entry>
@@ -230,7 +259,7 @@
     <link href="https://jin-yuhan.github.io/posts/ed79c1d6/"/>
     <id>https://jin-yuhan.github.io/posts/ed79c1d6/</id>
     <published>2020-04-16T12:07:04.000Z</published>
-    <updated>2020-12-18T11:14:38.560Z</updated>
+    <updated>2021-07-14T14:41:21.705Z</updated>
     
     
     <summary type="html">整理了部分三角恒等式，例如：诱导公式、和差角、倍角、升幂、降幂、辅助角等。适用于高考数学的复习。</summary>
